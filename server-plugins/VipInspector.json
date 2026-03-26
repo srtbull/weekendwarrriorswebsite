@@ -1,0 +1,100 @@
+{
+  "Last Snapshot": {
+    "CapturedAtUtc": "2026-03-11T02:29:39.846849Z",
+    "Groups": [
+      {
+        "GroupName": "vip1",
+        "Permissions": [
+          "advancedmlrs.vip1",
+          "backpacks.size.144",
+          "nteleportation.vip1"
+        ],
+        "Members": []
+      },
+      {
+        "GroupName": "vip2",
+        "Permissions": [
+          "advancedmlrs.vip2",
+          "backpacks.size.192",
+          "nteleportation.vip2"
+        ],
+        "Members": []
+      },
+      {
+        "GroupName": "vip3",
+        "Permissions": [
+          "advancedmlrs.vip3",
+          "backpacks.size.240",
+          "buildinggrades.down.all",
+          "nteleportation.vip3",
+          "kits.explosivesexpert1"
+        ],
+        "Members": [
+          "76561198040218052 (LivingDeadGirl)",
+          "76561198034312366 (Banshee)"
+        ]
+      },
+      {
+        "GroupName": "vip",
+        "Permissions": [
+          "magicstack.use",
+          "skinner.default",
+          "skinner.items",
+          "skinner.skinall",
+          "skinner.skinauto",
+          "skinner.skinautotoggled",
+          "skinner.skinbase",
+          "skinner.skincon",
+          "skinner.skininv",
+          "skinner.skinrequest",
+          "skinner.skinteam",
+          "instantsmelt.use",
+          "buildingworkbench.use",
+          "quicksort.use",
+          "quicksort.lootall",
+          "sortbutton.use",
+          "wheresmycorpse.canuse",
+          "powerlessturrets.use",
+          "tcmanager.auth",
+          "tcmanager.openinv",
+          "tcmanager.taxrate",
+          "tcmanager.upkeep",
+          "advancedrefinery.use",
+          "autoadd.allow",
+          "buildinggrades.use",
+          "backpacks.size.96",
+          "bgrade.all",
+          "craftingcontroller.craftingrate",
+          "doorcontrol.use",
+          "kits.vip",
+          "InstantBarrel.on",
+          "nteleportation.vip",
+          "playerlist.allow",
+          "recycle.use",
+          "removertool.normal",
+          "signartist.url",
+          "simplesplitter.use",
+          "skinner.craft",
+          "spawnheli.all.spawn",
+          "trade.accept",
+          "trade.use",
+          "upgradeworkbenches.downgrade",
+          "upgradeworkbenches.refund",
+          "upgradeworkbenches.upgrade",
+          "advancedmlrs.basic",
+          "backpacks.retrieve",
+          "backpacks.gather",
+          "buildinggrades.up.all",
+          "kits.boatbuilder1",
+          "turretloadouts.autotoggle.samsite",
+          "turretloadouts.manage"
+        ],
+        "Members": [
+          "76561198040218052 (LivingDeadGirl)",
+          "76561198034312366 (Banshee)"
+        ]
+      }
+    ],
+    "KitsSummary": "Kits plugin detected (4.4.8). Detailed kit export not yet implemented."
+  }
+}

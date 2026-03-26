@@ -1,0 +1,120 @@
+{
+  "GeneratedAtUtc": "2026-03-11T02:40:18.302718Z",
+  "Tiers": [
+    {
+      "TierId": "vip_all",
+      "DisplayName": "Global VIP",
+      "GroupName": "vip",
+      "MonthlyPrice": 39.99,
+      "ColorHex": "#f1c40f",
+      "SortOrder": 0,
+      "MemberCount": 2,
+      "Permissions": [
+        "magicstack.use",
+        "skinner.default",
+        "skinner.items",
+        "skinner.skinall",
+        "skinner.skinauto",
+        "skinner.skinautotoggled",
+        "skinner.skinbase",
+        "skinner.skincon",
+        "skinner.skininv",
+        "skinner.skinrequest",
+        "skinner.skinteam",
+        "instantsmelt.use",
+        "buildingworkbench.use",
+        "quicksort.use",
+        "quicksort.lootall",
+        "sortbutton.use",
+        "wheresmycorpse.canuse",
+        "powerlessturrets.use",
+        "tcmanager.auth",
+        "tcmanager.openinv",
+        "tcmanager.taxrate",
+        "tcmanager.upkeep",
+        "advancedrefinery.use",
+        "autoadd.allow",
+        "buildinggrades.use",
+        "backpacks.size.96",
+        "bgrade.all",
+        "craftingcontroller.craftingrate",
+        "doorcontrol.use",
+        "kits.vip",
+        "InstantBarrel.on",
+        "nteleportation.vip",
+        "playerlist.allow",
+        "recycle.use",
+        "removertool.normal",
+        "signartist.url",
+        "simplesplitter.use",
+        "skinner.craft",
+        "spawnheli.all.spawn",
+        "trade.accept",
+        "trade.use",
+        "upgradeworkbenches.downgrade",
+        "upgradeworkbenches.refund",
+        "upgradeworkbenches.upgrade",
+        "advancedmlrs.basic",
+        "backpacks.retrieve",
+        "backpacks.gather",
+        "buildinggrades.up.all",
+        "kits.boatbuilder1",
+        "turretloadouts.autotoggle.samsite",
+        "turretloadouts.manage"
+      ],
+      "Kits": [
+        "vip",
+        "boatbuilder1"
+      ]
+    },
+    {
+      "TierId": "vip1",
+      "DisplayName": "VIP I",
+      "GroupName": "vip1",
+      "MonthlyPrice": 9.99,
+      "ColorHex": "#1abc9c",
+      "SortOrder": 1,
+      "MemberCount": 0,
+      "Permissions": [
+        "advancedmlrs.vip1",
+        "backpacks.size.144",
+        "nteleportation.vip1"
+      ],
+      "Kits": []
+    },
+    {
+      "TierId": "vip2",
+      "DisplayName": "VIP II",
+      "GroupName": "vip2",
+      "MonthlyPrice": 19.99,
+      "ColorHex": "#3498db",
+      "SortOrder": 2,
+      "MemberCount": 0,
+      "Permissions": [
+        "advancedmlrs.vip2",
+        "backpacks.size.192",
+        "nteleportation.vip2"
+      ],
+      "Kits": []
+    },
+    {
+      "TierId": "vip3",
+      "DisplayName": "VIP III",
+      "GroupName": "vip3",
+      "MonthlyPrice": 29.99,
+      "ColorHex": "#9b59b6",
+      "SortOrder": 3,
+      "MemberCount": 2,
+      "Permissions": [
+        "advancedmlrs.vip3",
+        "backpacks.size.240",
+        "buildinggrades.down.all",
+        "nteleportation.vip3",
+        "kits.explosivesexpert1"
+      ],
+      "Kits": [
+        "explosivesexpert1"
+      ]
+    }
+  ]
+}
