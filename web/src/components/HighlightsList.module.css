@@ -1,0 +1,133 @@
+.inline {
+  display: inline;
+}
+
+.pluginTrigger {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 178, 74, 0.55);
+}
+
+.pluginTrigger:hover {
+  color: #ffb24a;
+  text-decoration-color: #ffb24a;
+}
+
+.suffix {
+  white-space: normal;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(5, 3, 2, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(165deg, #1a1512 0%, #0d0a08 100%);
+  border: 1px solid rgba(255, 178, 74, 0.25);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  color: #f4f1ec;
+  animation: popIn 0.22s ease;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f4f1ec;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 107, 44, 0.35);
+}
+
+.modalTitle {
+  margin: 0 2.5rem 1rem 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+.modalMeta {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  color: #c9c2b8;
+}
+
+.modalLabel {
+  color: #ffb24a;
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
+.code {
+  font-size: 0.88em;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.modalPlaceholder {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #9a9288;
+}

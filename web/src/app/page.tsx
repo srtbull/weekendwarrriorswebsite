@@ -1,10 +1,11 @@
-import { getHighlightsBody } from "@/lib/website-highlights";
+import { HighlightsList } from "@/components/HighlightsList";
+import { getHighlightData } from "@/lib/website-highlights";
 import styles from "./page.module.css";
 
 const DISCORD_URL = "https://discord.gg/CAjPNVp7Rh";
 
 export default async function Home() {
-  const highlightsBody = await getHighlightsBody();
+  const highlightData = await getHighlightData();
 
   return (
     <div className={styles.shell}>
@@ -39,7 +40,11 @@ export default async function Home() {
 
           <p className={styles.highlights}>
             <strong className={styles.highlightsLabel}>Highlights:</strong>{" "}
-            {highlightsBody}
+            {highlightData.mode === "fallback" ? (
+              <HighlightsList mode="fallback" text={highlightData.text} />
+            ) : (
+              <HighlightsList mode="plugins" plugins={highlightData.plugins} />
+            )}
           </p>
         </section>
 
