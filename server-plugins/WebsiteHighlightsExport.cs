@@ -131,7 +131,7 @@ namespace Oxide.Plugins
                     {
                         Name = p.Name,
                         Title = string.IsNullOrEmpty(p.Title) ? p.Name : p.Title,
-                        Version = p.Version?.ToString() ?? "",
+                        Version = p.Version.ToString(),
                         IncludeOnWebsite = false
                     };
                     installed.Add(dto);
