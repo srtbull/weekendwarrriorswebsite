@@ -1,8 +1,11 @@
+import { getHighlightsBody } from "@/lib/website-highlights";
 import styles from "./page.module.css";
 
 const DISCORD_URL = "https://discord.gg/CAjPNVp7Rh";
 
-export default function Home() {
+export default async function Home() {
+  const highlightsBody = await getHighlightsBody();
+
   return (
     <div className={styles.shell}>
       <div className={styles.heroBackdrop} aria-hidden="true" />
@@ -35,10 +38,8 @@ export default function Home() {
           </p>
 
           <p className={styles.highlights}>
-            <strong className={styles.highlightsLabel}>Highlights:</strong> Kits
-            · Clans · Backpacks · Better Loot · Skills · Warps &amp; TP ·
-            Warrior Coins · Plane Crash &amp; MLRS events · Trade · Skins &amp;
-            stacks — full plugin list in Discord.
+            <strong className={styles.highlightsLabel}>Highlights:</strong>{" "}
+            {highlightsBody}
           </p>
         </section>
 
