@@ -157,11 +157,12 @@
   padding-top: clamp(2rem, 5vh, 3rem);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: clamp(1.25rem, 3vh, 2rem);
 }
 
 .discord {
+  align-self: flex-end;
   background: rgba(88, 101, 242, 0.95);
   color: #fff;
   padding: 1.1rem 1.6rem 0.95rem;
