@@ -8,6 +8,7 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   font-family: "Barlow Condensed", system-ui, sans-serif;
   color: #f4f1ec;
 }
@@ -18,26 +19,29 @@
   box-sizing: border-box;
 }
 
-.bg {
+/* One layer: photo + vignette (avoids stacked full-bleed divs ghosting in some browsers) */
+.heroBackdrop {
   position: absolute;
   inset: 0;
-  background: url("/oil-rig.png") center center / cover no-repeat;
+  z-index: 0;
+  pointer-events: none;
   background-color: #0a0604;
-}
-
-.vignette {
-  position: absolute;
-  inset: 0;
-  background:
+  background-image:
     radial-gradient(ellipse 120% 100% at 50% 40%, transparent 20%, rgba(10, 6, 4, 0.75) 100%),
     linear-gradient(180deg, rgba(8, 5, 3, 0.55) 0%, transparent 35%, transparent 62%, rgba(8, 5, 3, 0.88) 100%),
-    linear-gradient(90deg, rgba(8, 5, 3, 0.5) 0%, transparent 28%, transparent 72%, rgba(8, 5, 3, 0.45) 100%);
-  pointer-events: none;
+    linear-gradient(90deg, rgba(8, 5, 3, 0.5) 0%, transparent 28%, transparent 72%, rgba(8, 5, 3, 0.45) 100%),
+    url("/oil-rig.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .content {
   position: absolute;
   inset: 0;
+  z-index: 1;
   padding: 56px 72px 48px;
   display: flex;
   flex-direction: column;

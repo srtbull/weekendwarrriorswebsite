@@ -3,8 +3,7 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className={styles.stage}>
-      <div className={styles.bg} aria-hidden="true" />
-      <div className={styles.vignette} aria-hidden="true" />
+      <div className={styles.heroBackdrop} aria-hidden="true" />
 
       <div className={styles.content}>
         <div className={styles.top}>
