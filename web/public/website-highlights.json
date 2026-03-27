@@ -1,5 +1,721 @@
 {
-  "generatedAtUtc": "0001-01-01T00:00:00Z",
-  "installedPlugins": [],
-  "websiteHighlightLabels": []
+  "generatedAtUtc": "2026-03-27T05:46:03.140184Z",
+  "installedPlugins": [
+    {
+      "name": "AdminMenu",
+      "title": "AdminMenu",
+      "version": "2.1.11",
+      "hidden": false
+    },
+    {
+      "name": "AdminRadar",
+      "title": "Admin Radar",
+      "version": "5.4.2",
+      "hidden": false
+    },
+    {
+      "name": "AdvancedMLRS",
+      "title": "AdvancedMLRS",
+      "version": "4.5.0",
+      "hidden": false
+    },
+    {
+      "name": "AdvancedRefinery",
+      "title": "AdvancedRefinery",
+      "version": "6.0.4",
+      "hidden": false
+    },
+    {
+      "name": "AdvertMessages",
+      "title": "Advert Messages",
+      "version": "3.0.2",
+      "hidden": false
+    },
+    {
+      "name": "AlwaysDay",
+      "title": "Always Day",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "AlwaysHotSpot",
+      "title": "AlwaysHotSpot",
+      "version": "1.0.2",
+      "hidden": false
+    },
+    {
+      "name": "APCCore",
+      "title": "RustEdit APC Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "AutoAdd",
+      "title": "AutoAdd",
+      "version": "1.1.5",
+      "hidden": false
+    },
+    {
+      "name": "AutoCodeLock",
+      "title": "AutoCodeLock",
+      "version": "3.0.11",
+      "hidden": false
+    },
+    {
+      "name": "AutoUpdater",
+      "title": "RustEdit Automatic Updater",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "Backpacks",
+      "title": "Backpacks",
+      "version": "3.17.2",
+      "hidden": false
+    },
+    {
+      "name": "BetterChat",
+      "title": "Better Chat",
+      "version": "5.2.15",
+      "hidden": false
+    },
+    {
+      "name": "BetterChatMute",
+      "title": "Better Chat Mute",
+      "version": "1.2.1",
+      "hidden": false
+    },
+    {
+      "name": "BetterLoot",
+      "title": "BetterLoot",
+      "version": "4.1.10",
+      "hidden": false
+    },
+    {
+      "name": "BetterNoWorkbench",
+      "title": "Better No Workbench",
+      "version": "2.0.1",
+      "hidden": false
+    },
+    {
+      "name": "BetterSentryTurrets",
+      "title": "BetterSentryTurrets",
+      "version": "1.8.4",
+      "hidden": false
+    },
+    {
+      "name": "BGrade",
+      "title": "BGrade",
+      "version": "1.1.6",
+      "hidden": false
+    },
+    {
+      "name": "BlueprintManager",
+      "title": "Blueprint Manager",
+      "version": "2.1.4",
+      "hidden": false
+    },
+    {
+      "name": "BuildingGrades",
+      "title": "Building Grades",
+      "version": "1.0.13",
+      "hidden": false
+    },
+    {
+      "name": "BuildingWorkbench",
+      "title": "Building Workbench",
+      "version": "1.4.2",
+      "hidden": false
+    },
+    {
+      "name": "ChaosExtensionCommands",
+      "title": "Chaos Commands",
+      "version": "1.0.60",
+      "hidden": false
+    },
+    {
+      "name": "ChaosExtensionDownloader",
+      "title": "ChaosExtensionDownloader",
+      "version": "1.0.50",
+      "hidden": false
+    },
+    {
+      "name": "ChaosNPC",
+      "title": "ChaosNPC",
+      "version": "3.0.39",
+      "hidden": false
+    },
+    {
+      "name": "ChaosNPCExtensionCommands",
+      "title": "ChaosNPC Commands",
+      "version": "3.0.39",
+      "hidden": false
+    },
+    {
+      "name": "ChatClear",
+      "title": "Chat Clear",
+      "version": "2.0.0",
+      "hidden": false
+    },
+    {
+      "name": "Clans",
+      "title": "Clans",
+      "version": "0.2.8",
+      "hidden": false
+    },
+    {
+      "name": "CompoundOptions",
+      "title": "Compound Options",
+      "version": "1.2.6",
+      "hidden": false
+    },
+    {
+      "name": "CopyPaste",
+      "title": "Copy Paste",
+      "version": "4.2.7",
+      "hidden": false
+    },
+    {
+      "name": "CraftingController",
+      "title": "Crafting Controller",
+      "version": "3.3.4",
+      "hidden": false
+    },
+    {
+      "name": "CustomTopologyLayers",
+      "title": "RustEdit Custom Topology Layers",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "DeathNotes",
+      "title": "Death Notes",
+      "version": "6.5.5",
+      "hidden": false
+    },
+    {
+      "name": "DeployableCore",
+      "title": "RustEdit Deployable Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "DeskKeycardSpawner",
+      "title": "RustEdit Desk Keycard Spawner",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "DieselCollectableSpawner",
+      "title": "RustEdit Diesel Collectable Spawner",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "DiscordExtension",
+      "title": "Discord Extension",
+      "version": "3.1.7",
+      "hidden": false
+    },
+    {
+      "name": "DoorControl",
+      "title": "Door Control",
+      "version": "0.0.1",
+      "hidden": false
+    },
+    {
+      "name": "DynamicCupShare",
+      "title": "DynamicCupShare",
+      "version": "3.1.21",
+      "hidden": false
+    },
+    {
+      "name": "EntityOwner",
+      "title": "Entity Owner",
+      "version": "3.4.3",
+      "hidden": false
+    },
+    {
+      "name": "ExcavatorRotationFix",
+      "title": "RustEdit Excavator Rotation Correction",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "Friends",
+      "title": "Friends",
+      "version": "3.1.3",
+      "hidden": false
+    },
+    {
+      "name": "GatherManager",
+      "title": "Gather Manager",
+      "version": "2.2.78",
+      "hidden": false
+    },
+    {
+      "name": "HelicopterInstantTakeoff",
+      "title": "Helicopter Instant Takeoff",
+      "version": "0.1.0",
+      "hidden": false
+    },
+    {
+      "name": "ImageLibrary",
+      "title": "Image Library",
+      "version": "2.0.64",
+      "hidden": false
+    },
+    {
+      "name": "InstantBarrel",
+      "title": "Instant Barrel",
+      "version": "1.3.2",
+      "hidden": false
+    },
+    {
+      "name": "InstantSmelt",
+      "title": "Instant Smelt",
+      "version": "2.1.2",
+      "hidden": false
+    },
+    {
+      "name": "InventoryViewer",
+      "title": "Inventory Viewer",
+      "version": "4.1.2",
+      "hidden": false
+    },
+    {
+      "name": "IOCore",
+      "title": "RustEdit IO Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "ItemRetriever",
+      "title": "Item Retriever",
+      "version": "0.7.7",
+      "hidden": false
+    },
+    {
+      "name": "JunkPileCore",
+      "title": "RustEdit JunkPile Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "Kits",
+      "title": "Kits",
+      "version": "4.4.8",
+      "hidden": false
+    },
+    {
+      "name": "LockOnRockets",
+      "title": "LockOnRockets",
+      "version": "0.3.23",
+      "hidden": false
+    },
+    {
+      "name": "LootCore",
+      "title": "RustEdit Loot Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "MagicStack",
+      "title": "Magic Stack",
+      "version": "0.0.1",
+      "hidden": false
+    },
+    {
+      "name": "MapMarkerApi",
+      "title": "Map Marker Api",
+      "version": "0.0.1",
+      "hidden": false
+    },
+    {
+      "name": "MonumentFinder",
+      "title": "Monument Finder",
+      "version": "3.1.5",
+      "hidden": false
+    },
+    {
+      "name": "NoGiveNotices",
+      "title": "No Give Notices",
+      "version": "0.3.0",
+      "hidden": false
+    },
+    {
+      "name": "NPCCore",
+      "title": "RustEdit NPC Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "NTeleportation",
+      "title": "NTeleportation",
+      "version": "1.9.4",
+      "hidden": false
+    },
+    {
+      "name": "OceanPath",
+      "title": "RustEdit Ocean Path",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "PayNow",
+      "title": "PayNow",
+      "version": "0.0.18",
+      "hidden": false
+    },
+    {
+      "name": "PlaneCrash",
+      "title": "PlaneCrash",
+      "version": "0.3.12",
+      "hidden": false
+    },
+    {
+      "name": "PlayerAdministration",
+      "title": "PlayerAdministration",
+      "version": "1.6.9",
+      "hidden": false
+    },
+    {
+      "name": "PlayerDLCAPI",
+      "title": "Player DLC API",
+      "version": "1.6.2",
+      "hidden": false
+    },
+    {
+      "name": "PlayerList",
+      "title": "PlayerList",
+      "version": "0.3.2",
+      "hidden": false
+    },
+    {
+      "name": "PluginInterface",
+      "title": "Chaos Plugin Interface",
+      "version": "1.0.60",
+      "hidden": false
+    },
+    {
+      "name": "PopulateShopKeepers",
+      "title": "RustEdit Shop Keepers",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "PowerlessTurrets",
+      "title": "Powerless Turrets",
+      "version": "3.2.10",
+      "hidden": false
+    },
+    {
+      "name": "QuickSort",
+      "title": "Quick Sort",
+      "version": "1.8.9",
+      "hidden": false
+    },
+    {
+      "name": "RandomResourceNode",
+      "title": "Random Resource Node",
+      "version": "1.3.9",
+      "hidden": false
+    },
+    {
+      "name": "Recycle",
+      "title": "Recycle",
+      "version": "3.2.1",
+      "hidden": false
+    },
+    {
+      "name": "RemoverTool",
+      "title": "Remover Tool",
+      "version": "4.3.46",
+      "hidden": false
+    },
+    {
+      "name": "ResourceCore",
+      "title": "RustEdit Resource Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "RustAppLite",
+      "title": "RustApp Lite",
+      "version": "1.1.0",
+      "hidden": false
+    },
+    {
+      "name": "RustCore",
+      "title": "Rust",
+      "version": "2.0.7178",
+      "hidden": false
+    },
+    {
+      "name": "RustEditCore",
+      "title": "RustEdit Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "SignArtist",
+      "title": "Sign Artist",
+      "version": "1.4.6",
+      "hidden": false
+    },
+    {
+      "name": "SimpleSplitter",
+      "title": "Simple Splitter",
+      "version": "2.6.0",
+      "hidden": false
+    },
+    {
+      "name": "Skillz",
+      "title": "Skillz",
+      "version": "2.0.0",
+      "hidden": false
+    },
+    {
+      "name": "Skinner",
+      "title": "Skinner",
+      "version": "3.1.1",
+      "hidden": false
+    },
+    {
+      "name": "SortButton",
+      "title": "Sort Button",
+      "version": "2.7.0",
+      "hidden": false
+    },
+    {
+      "name": "SpawnCore",
+      "title": "RustEdit Spawn Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "SpawnHeli",
+      "title": "Spawn Heli",
+      "version": "3.2.0",
+      "hidden": false
+    },
+    {
+      "name": "StackModifier",
+      "title": "Stack Modifier",
+      "version": "2.9.8",
+      "hidden": false
+    },
+    {
+      "name": "TCManager",
+      "title": "TC Manager",
+      "version": "1.0.5",
+      "hidden": false
+    },
+    {
+      "name": "Trade",
+      "title": "Trade",
+      "version": "1.2.45",
+      "hidden": false
+    },
+    {
+      "name": "TurretLoadouts",
+      "title": "Turret Loadouts",
+      "version": "1.2.0",
+      "hidden": false
+    },
+    {
+      "name": "UnityCore",
+      "title": "Unity",
+      "version": "2.0.3777",
+      "hidden": false
+    },
+    {
+      "name": "UpdateChecker",
+      "title": "UpdateChecker",
+      "version": "4.3.2",
+      "hidden": false
+    },
+    {
+      "name": "UpgradeWorkbenches",
+      "title": "UpgradeWorkbenches",
+      "version": "2.1.4",
+      "hidden": false
+    },
+    {
+      "name": "Vanish",
+      "title": "Vanish",
+      "version": "2.1.1",
+      "hidden": false
+    },
+    {
+      "name": "VehicleCore",
+      "title": "RustEdit Vehicle Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "VendingCore",
+      "title": "RustEdit Vending Core",
+      "version": "1.0.1",
+      "hidden": false
+    },
+    {
+      "name": "VipInspector",
+      "title": "VipInspector",
+      "version": "0.2.0",
+      "hidden": false
+    },
+    {
+      "name": "WarpSystem",
+      "title": "Warp System",
+      "version": "1.9.15",
+      "hidden": false
+    },
+    {
+      "name": "WarriorCoins",
+      "title": "Warrior Coins",
+      "version": "0.1.0",
+      "hidden": false
+    },
+    {
+      "name": "WeaponModifier",
+      "title": "Weapon Modifier",
+      "version": "1.0.3",
+      "hidden": false
+    },
+    {
+      "name": "WebsiteHighlightsExport",
+      "title": "WebsiteHighlightsExport",
+      "version": "1.1.0",
+      "hidden": false
+    },
+    {
+      "name": "Welcomer",
+      "title": "Welcomer",
+      "version": "2.1.0",
+      "hidden": false
+    },
+    {
+      "name": "WheresMyCorpse",
+      "title": "Where's My Corpse",
+      "version": "0.6.2",
+      "hidden": false
+    },
+    {
+      "name": "WipeDataCleaner",
+      "title": "Wipe Data Cleaner",
+      "version": "1.4.3",
+      "hidden": false
+    },
+    {
+      "name": "ZoneManager",
+      "title": "Zone Manager",
+      "version": "3.1.10",
+      "hidden": false
+    }
+  ],
+  "websiteHighlightLabels": [
+    "AdminMenu",
+    "Admin Radar",
+    "AdvancedMLRS",
+    "AdvancedRefinery",
+    "Advert Messages",
+    "Always Day",
+    "AlwaysHotSpot",
+    "RustEdit APC Core",
+    "AutoAdd",
+    "AutoCodeLock",
+    "RustEdit Automatic Updater",
+    "Backpacks",
+    "Better Chat",
+    "Better Chat Mute",
+    "BetterLoot",
+    "Better No Workbench",
+    "BetterSentryTurrets",
+    "BGrade",
+    "Blueprint Manager",
+    "Building Grades",
+    "Building Workbench",
+    "Chaos Commands",
+    "ChaosExtensionDownloader",
+    "ChaosNPC",
+    "ChaosNPC Commands",
+    "Chat Clear",
+    "Clans",
+    "Compound Options",
+    "Copy Paste",
+    "Crafting Controller",
+    "RustEdit Custom Topology Layers",
+    "Death Notes",
+    "RustEdit Deployable Core",
+    "RustEdit Desk Keycard Spawner",
+    "RustEdit Diesel Collectable Spawner",
+    "Discord Extension",
+    "Door Control",
+    "DynamicCupShare",
+    "Entity Owner",
+    "RustEdit Excavator Rotation Correction",
+    "Friends",
+    "Gather Manager",
+    "Helicopter Instant Takeoff",
+    "Image Library",
+    "Instant Barrel",
+    "Instant Smelt",
+    "Inventory Viewer",
+    "RustEdit IO Core",
+    "Item Retriever",
+    "RustEdit JunkPile Core",
+    "Kits",
+    "LockOnRockets",
+    "RustEdit Loot Core",
+    "Magic Stack",
+    "Map Marker Api",
+    "Monument Finder",
+    "No Give Notices",
+    "RustEdit NPC Core",
+    "NTeleportation",
+    "RustEdit Ocean Path",
+    "PayNow",
+    "PlaneCrash",
+    "PlayerAdministration",
+    "Player DLC API",
+    "PlayerList",
+    "Chaos Plugin Interface",
+    "RustEdit Shop Keepers",
+    "Powerless Turrets",
+    "Quick Sort",
+    "Random Resource Node",
+    "Recycle",
+    "Remover Tool",
+    "RustEdit Resource Core",
+    "RustApp Lite",
+    "Rust",
+    "RustEdit Core",
+    "Sign Artist",
+    "Simple Splitter",
+    "Skillz",
+    "Skinner",
+    "Sort Button",
+    "RustEdit Spawn Core",
+    "Spawn Heli",
+    "Stack Modifier",
+    "TC Manager",
+    "Trade",
+    "Turret Loadouts",
+    "Unity",
+    "UpdateChecker",
+    "UpgradeWorkbenches",
+    "Vanish",
+    "RustEdit Vehicle Core",
+    "RustEdit Vending Core",
+    "VipInspector",
+    "Warp System",
+    "Warrior Coins",
+    "Weapon Modifier",
+    "WebsiteHighlightsExport",
+    "Welcomer",
+    "Where's My Corpse",
+    "Wipe Data Cleaner",
+    "Zone Manager"
+  ]
 }
