@@ -8,23 +8,11 @@ using Oxide.Core.Plugins;
 
 namespace Oxide.Plugins
 {
-    [Info("WebsiteHighlightsExport", "WeekenedWarriors", "1.0.0")]
-    [Description("Exports installed Oxide plugins + optional website highlight labels to JSON (oxide/data).")]
+    [Info("WebsiteHighlightsExport", "WeekenedWarriors", "1.1.0")]
+    [Description("Exports all Oxide plugins to JSON. Edit oxide/data JSON: set hidden=true to hide a plugin on the website. Values persist across exports.")]
     public class WebsiteHighlightsExport : CovalencePlugin
     {
         private const string LogName = "WebsiteHighlightsExport";
-
-        private class HighlightRule
-        {
-            [JsonProperty(PropertyName = "Plugin Name (must match Oxide name, e.g. Kits)")]
-            public string PluginName = "";
-
-            [JsonProperty(PropertyName = "Include On Website")]
-            public bool IncludeOnWebsite = false;
-
-            [JsonProperty(PropertyName = "Display Label (optional, else plugin Title/Name)")]
-            public string DisplayLabel = "";
-        }
 
         private class PluginConfig
         {
@@ -36,17 +24,6 @@ namespace Oxide.Plugins
 
             [JsonProperty(PropertyName = "Enable Debug Logging")]
             public bool DebugLogging = false;
-
-            [JsonProperty(PropertyName = "Highlight Rules (only matching installed plugins can appear on site)")]
-            public List<HighlightRule> HighlightRules = new List<HighlightRule>
-            {
-                new HighlightRule
-                {
-                    PluginName = "Kits",
-                    IncludeOnWebsite = true,
-                    DisplayLabel = "Kits"
-                }
-            };
         }
 
         private class InstalledPluginDto
@@ -54,7 +31,9 @@ namespace Oxide.Plugins
             [JsonProperty("name")] public string Name { get; set; }
             [JsonProperty("title")] public string Title { get; set; }
             [JsonProperty("version")] public string Version { get; set; }
-            [JsonProperty("includeOnWebsite")] public bool IncludeOnWebsite { get; set; }
+
+            /// <summary> If true, this plugin is omitted from the website Highlights line. Default false = shown. </summary>
+            [JsonProperty("hidden")] public bool Hidden { get; set; }
         }
 
         private class HighlightsExportDto
@@ -115,48 +94,58 @@ namespace Oxide.Plugins
             player?.Reply("[WebsiteHighlightsExport] Wrote JSON to oxide/data.");
         }
 
+        private Dictionary<string, bool> LoadPreviousHiddenByName()
+        {
+            var map = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+            try
+            {
+                var existing = Interface.Oxide.DataFileSystem.ReadObject<HighlightsExportDto>(config.OutputDataFileName);
+                if (existing?.InstalledPlugins == null) return map;
+
+                foreach (var row in existing.InstalledPlugins)
+                {
+                    if (string.IsNullOrEmpty(row?.Name)) continue;
+                    map[row.Name] = row.Hidden;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (config.DebugLogging)
+                    LogToFile(LogName, $"[DEBUG] Could not read previous export for merge: {ex.Message}", this);
+            }
+
+            return map;
+        }
+
         private void WriteExport()
         {
             try
             {
+                var previousHidden = LoadPreviousHiddenByName();
                 var installed = new List<InstalledPluginDto>();
-                var highlightLabels = new List<string>();
-                var byName = new Dictionary<string, InstalledPluginDto>(StringComparer.OrdinalIgnoreCase);
 
                 foreach (var p in Interface.Oxide.RootPluginManager.GetPlugins())
                 {
                     if (p == null || string.IsNullOrEmpty(p.Name)) continue;
+
+                    var hidden = previousHidden.TryGetValue(p.Name, out var wasHidden) && wasHidden;
 
                     var dto = new InstalledPluginDto
                     {
                         Name = p.Name,
                         Title = string.IsNullOrEmpty(p.Title) ? p.Name : p.Title,
                         Version = p.Version.ToString(),
-                        IncludeOnWebsite = false
+                        Hidden = hidden
                     };
                     installed.Add(dto);
-                    byName[p.Name] = dto;
                 }
 
                 installed.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.OrdinalIgnoreCase));
 
-                foreach (var rule in config.HighlightRules)
-                {
-                    if (string.IsNullOrWhiteSpace(rule.PluginName) || !rule.IncludeOnWebsite) continue;
-
-                    if (!byName.TryGetValue(rule.PluginName.Trim(), out var dto))
-                    {
-                        if (config.DebugLogging)
-                            LogToFile(LogName, $"[DEBUG] Rule '{rule.PluginName}' — plugin not installed, skip.", this);
-                        continue;
-                    }
-
-                    dto.IncludeOnWebsite = true;
-                    var label = string.IsNullOrWhiteSpace(rule.DisplayLabel)
-                        ? dto.Title
-                        : rule.DisplayLabel.Trim();
-                    highlightLabels.Add(label);
-                }
+                var highlightLabels = installed
+                    .Where(x => !x.Hidden)
+                    .Select(x => x.Title)
+                    .ToList();
 
                 var payload = new HighlightsExportDto
                 {
@@ -167,10 +156,12 @@ namespace Oxide.Plugins
 
                 Interface.Oxide.DataFileSystem.WriteObject(config.OutputDataFileName, payload);
 
+                var shown = highlightLabels.Count;
+                var hiddenCount = installed.Count - shown;
                 LogToFile(LogName,
-                    $"[INFO] Export OK — {installed.Count} plugins, {highlightLabels.Count} website highlight(s). Path: oxide/data/{config.OutputDataFileName}.json",
+                    $"[INFO] Export OK — {installed.Count} plugins ({shown} visible, {hiddenCount} hidden). File: oxide/data/{config.OutputDataFileName}.json — edit 'hidden' in that file to toggle website display.",
                     this);
-                Puts($"[WebsiteHighlightsExport] Wrote oxide/data/{config.OutputDataFileName}.json ({installed.Count} plugins).");
+                Puts($"[WebsiteHighlightsExport] Wrote oxide/data/{config.OutputDataFileName}.json ({installed.Count} plugins, {shown} shown on site).");
 
                 if (config.DebugLogging)
                 {
