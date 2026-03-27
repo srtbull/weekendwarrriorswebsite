@@ -1,4 +1,4 @@
-/* Switch art: change --hero-image (e.g. url("/oilrig.png")) */
+/* Switch art: --hero-image url("/oilrig.png") etc. */
 .shell {
   box-sizing: border-box;
   min-height: 100dvh;
@@ -24,11 +24,11 @@
   z-index: 0;
   pointer-events: none;
   background-color: #070504;
-  /* Photo is bottom layer; lighter overlays so the image stays visible */
   background-image:
     radial-gradient(ellipse 100% 85% at 50% 15%, rgba(255, 107, 44, 0.18), transparent 50%),
     radial-gradient(ellipse 80% 60% at 85% 95%, rgba(88, 101, 242, 0.12), transparent 45%),
-    linear-gradient(180deg, rgba(5, 3, 2, 0.75) 0%, transparent 35%, transparent 65%, rgba(3, 2, 1, 0.82) 100%),
+    linear-gradient(90deg, rgba(5, 3, 2, 0.55) 0%, transparent 42%, transparent 100%),
+    linear-gradient(180deg, rgba(5, 3, 2, 0.72) 0%, transparent 38%, transparent 62%, rgba(3, 2, 1, 0.85) 100%),
     var(--hero-image);
   background-position: center;
   background-size: cover;
@@ -41,85 +41,162 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(2rem, 6vh, 3.5rem);
-  padding: clamp(1.5rem, 5vw, 3rem);
-  text-align: center;
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1.75rem, 5vw, 4.5rem)
+    clamp(1.5rem, 4vw, 2.5rem);
+  text-align: left;
 }
 
-.header {
-  max-width: 28rem;
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  flex: 1;
+  min-width: min(100%, 16rem);
 }
 
 .title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(3rem, 12vw, 5.5rem);
-  line-height: 0.95;
-  letter-spacing: 0.06em;
-  color: #fff;
-  margin: 0 0 1rem;
-  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
-}
-
-.titleAccent {
-  display: block;
-  font-size: 0.55em;
-  letter-spacing: 0.32em;
-  color: #ffb24a;
-  margin-top: 0.35rem;
-}
-
-.tagline {
   margin: 0;
-  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
-  font-weight: 600;
-  line-height: 1.45;
-  color: #c9c2b8;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.75);
 }
 
-.cta {
+.titleMain {
+  display: block;
+  font-size: clamp(2.75rem, 9vw, 6.25rem);
+  color: #fff;
+}
+
+/* ~2/3 of main title */
+.titleSub {
+  display: block;
+  margin-top: 0.12em;
+  font-size: clamp(1.85rem, 6vw, 4.15rem);
+  letter-spacing: 0.28em;
+  color: #ffb24a;
+}
+
+.comingSoon {
+  flex-shrink: 0;
+  align-self: flex-start;
+  background: linear-gradient(135deg, #ff6b2c 0%, #c73e1d 100%);
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.35rem, 3.5vw, 2.5rem);
+  letter-spacing: 0.32em;
+  padding: 0.55rem 1.1rem 0.45rem;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+.body {
+  margin-top: clamp(1.75rem, 4vh, 2.75rem);
+  max-width: 52rem;
+}
+
+.tags {
+  list-style: none;
+  margin: 0 0 1.35rem;
+  padding: 0;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tag {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 178, 74, 0.45);
+  padding: 0.5rem 1.1rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.tagAccent {
+  background: rgba(255, 107, 44, 0.22);
+  border-color: #ff8c4a;
+}
+
+.pitch {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.38;
+  max-width: 42rem;
+  color: #f0ebe3;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+
+.highlights {
+  margin: 0;
+  font-size: clamp(0.95rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 48rem;
+  color: #e8e4de;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.highlightsLabel {
+  color: #ffb24a;
+  font-weight: 700;
+}
+
+.bottom {
+  margin-top: auto;
+  padding-top: clamp(2rem, 5vh, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1.25rem, 3vh, 2rem);
 }
 
 .discord {
-  background: #5865f2;
+  background: rgba(88, 101, 242, 0.95);
   color: #fff;
-  padding: 1rem 1.75rem 0.85rem;
-  border-radius: 8px;
-  font-size: clamp(1.1rem, 3vw, 1.35rem);
+  padding: 1.1rem 1.6rem 0.95rem;
+  border-radius: 6px;
+  font-size: clamp(1rem, 2.5vw, 1.65rem);
   font-weight: 700;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   text-decoration: none;
   display: inline-flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.35rem;
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   transition: filter 0.15s ease, transform 0.15s ease;
 }
 
 .discord:hover {
-  filter: brightness(1.06);
+  filter: brightness(1.07);
   transform: translateY(-1px);
 }
 
 .discordHint {
-  font-size: 0.72em;
+  font-size: 0.68em;
   font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  opacity: 0.9;
+  letter-spacing: 0.03em;
+  opacity: 0.92;
 }
 
 .footnote {
   margin: 0;
-  max-width: 24rem;
-  font-size: 0.85rem;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
   line-height: 1.4;
-  color: #8a8278;
+  color: #9a9288;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
 }

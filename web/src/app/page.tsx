@@ -8,31 +8,55 @@ export default function Home() {
       <div className={styles.heroBackdrop} aria-hidden="true" />
 
       <main className={styles.main}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>
-            WEEKEND WARRIORS
-            <span className={styles.titleAccent}>BATTLEFIELD</span>
-          </h1>
-          <p className={styles.tagline}>
-            Rust community server — site under construction.
-          </p>
-        </header>
+        <div className={styles.topBar}>
+          <div className={styles.brand}>
+            <h1 className={styles.title}>
+              <span className={styles.titleMain}>WEEKEND WARRIORS</span>
+              <span className={styles.titleSub}>BATTLEFIELD</span>
+            </h1>
+          </div>
+          <div className={styles.comingSoon}>COMING SOON</div>
+        </div>
 
-        <div className={styles.cta}>
+        <section className={styles.body}>
+          <ul className={styles.tags} aria-label="Server features">
+            <li className={`${styles.tag} ${styles.tagAccent}`}>US HOSTED</li>
+            <li className={styles.tag}>10X</li>
+            <li className={styles.tag}>24/7 PVP</li>
+            <li className={`${styles.tag} ${styles.tagAccent}`}>
+              CUSTOM AND PREMIUM PLUGINS
+            </li>
+          </ul>
+
+          <p className={styles.pitch}>
+            High-octane Rust with stacked loot, clans, kits, warps, skills,
+            events, and QoL—built for players who want the fight, not the
+            grind.
+          </p>
+
+          <p className={styles.highlights}>
+            <strong className={styles.highlightsLabel}>Highlights:</strong> Kits
+            · Clans · Backpacks · Better Loot · Skills · Warps &amp; TP ·
+            Warrior Coins · Plane Crash &amp; MLRS events · Trade · Skins &amp;
+            stacks — full plugin list in Discord.
+          </p>
+        </section>
+
+        <div className={styles.bottom}>
           <a
             className={styles.discord}
             href={DISCORD_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Join Discord
+            JOIN DISCORD
             <span className={styles.discordHint}>discord.gg/CAjPNVp7Rh</span>
           </a>
-        </div>
 
-        <p className={styles.footnote}>
-          Unofficial community server · Not affiliated with Facepunch Studios
-        </p>
+          <p className={styles.footnote}>
+            Unofficial community server · Not affiliated with Facepunch Studios
+          </p>
+        </div>
       </main>
     </div>
   );
