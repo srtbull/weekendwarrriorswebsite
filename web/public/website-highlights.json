@@ -548,7 +548,16 @@
       "name": "RandomResourceNode",
       "title": "Random Resource Node",
       "version": "1.3.9",
-      "hidden": false
+      "hidden": false,
+      "description": "Spawns one infinite ore vein at a random surface location inside a configured circle—timed event or always-on—with optional spawn announcements, map markers, discovery flare, and extra HQM while mining the active metal vein. No default player chat commands; staff use /rrn (permission randomresourcenode.admin).",
+      "commands": [
+        "/rrn",
+        "/rrn here",
+        "/rrn respawn",
+        "/rrn pos",
+        "/rrn griddebug"
+      ],
+      "documentationUrl": "/plugin-docs/random-resource-node.html"
     },
     {
       "name": "Recycle",
@@ -749,7 +758,20 @@
       "name": "WarriorCoins",
       "title": "Warrior Coins",
       "version": "0.1.0",
-      "hidden": false
+      "hidden": false,
+      "description": "Server economy (WC): timed passive earnings by permission tier, optional daily login bonus, player bounties on kills, /wc pay transfers, in-game /shop with item or command delivery and cooldowns, optional balance HUD, and /wcadmin shop editor for staff (warriorcoins.admin).",
+      "commands": [
+        "/wc",
+        "/wc top",
+        "/wc pay <player> <amount>",
+        "/wctoggle",
+        "/bounty set <player> <amount>",
+        "/bounty cancel <player>",
+        "/bounty mine",
+        "/bounty onme",
+        "/shop"
+      ],
+      "documentationUrl": "/plugin-docs/warrior-coins.html"
     },
     {
       "name": "WeaponModifier",

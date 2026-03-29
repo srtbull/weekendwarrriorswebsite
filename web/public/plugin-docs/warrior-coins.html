@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warrior Coins - Plugin Documentation</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 800px; margin: 0 auto; padding: 24px; color: #333; line-height: 1.5; }
+    .header { text-align: center; padding: 24px 0; border-bottom: 3px solid #c44; margin-bottom: 28px; }
+    .header h1 { margin: 0; font-size: 28px; color: #222; }
+    .header .subtitle { color: #666; font-size: 14px; margin-top: 6px; }
+    .credit { background: #f5f5f5; padding: 10px 16px; border-radius: 6px; margin-top: 12px; font-size: 13px; color: #555; }
+    .section { margin: 24px 0; }
+    .section-title { font-size: 18px; color: #c44; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #e0e0e0; }
+    .section-title .icon { margin-right: 6px; }
+    ul, ol { margin: 8px 0; padding-left: 22px; }
+    li { margin: 4px 0; }
+    .code-block { background: #f8f8f8; padding: 12px 16px; border-radius: 6px; font-family: Consolas, monospace; font-size: 13px; margin: 10px 0; border-left: 4px solid #c44; }
+    .permissions-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 6px; overflow: hidden; }
+    .permissions-table th { background: #c44; color: white; padding: 10px 12px; text-align: left; }
+    .permissions-table td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+    .permissions-table tr:nth-child(even) { background: #fafafa; }
+    .permissions-table tr:last-child td { border-bottom: none; }
+    .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #888; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Warrior Coins</h1>
+    <p class="subtitle">Plugin Documentation for Rust (Oxide/uMod)</p>
+    <p class="subtitle">Version 0.1.0 · Author: WeekendWarrior</p>
+    <div class="credit">Created for server owners - complete setup, permissions, and command reference</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Overview</span></div>
+    <p>Warrior Coins is a full economy plugin with timed passive income, a daily login bonus, player bounties, a player shop, and an in-game shop admin editor. It is built for Rust servers running Oxide/uMod and stores all economy data in local plugin data files.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Requirements</span></div>
+    <ul>
+      <li>Rust server with Oxide/uMod installed.</li>
+      <li>No external plugin dependencies are required.</li>
+      <li>Players must have normal chat command access to use economy and bounty commands.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">What the Plugin Handles</span></div>
+    <ul>
+      <li><strong>Timed earnings:</strong> Grants coins every configured interval based on highest earn permission tier.</li>
+      <li><strong>Daily login bonus:</strong> Optional once-per-24-hour coin reward when players join.</li>
+      <li><strong>Bounties:</strong> Players place/cancel bounties, and killers automatically receive payouts.</li>
+      <li><strong>Economy transfers:</strong> Players can pay each other directly using chat commands.</li>
+      <li><strong>Shop system:</strong> In-game purchasable items/commands with per-player cooldown support.</li>
+      <li><strong>HUD:</strong> Optional top-right WC balance display with per-player toggle.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Permissions</span></div>
+    <table class="permissions-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+          <th>Default Benefit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>warriorcoins.admin</td><td>Admin economy + shop admin UI access</td><td>Unlimited balance behavior and admin commands</td></tr>
+        <tr><td>warriorcoins.earn.default</td><td>Timed earnings tier</td><td>5 WC per interval</td></tr>
+        <tr><td>warriorcoins.earn.vip</td><td>Timed earnings tier</td><td>10 WC per interval</td></tr>
+        <tr><td>warriorcoins.earn.vip1</td><td>Timed earnings tier</td><td>15 WC per interval</td></tr>
+        <tr><td>warriorcoins.earn.vip2</td><td>Timed earnings tier</td><td>20 WC per interval</td></tr>
+        <tr><td>warriorcoins.earn.vip3</td><td>Timed earnings tier</td><td>25 WC per interval</td></tr>
+      </tbody>
+    </table>
+    <p>The plugin applies the <strong>highest matching earn tier</strong> for each player. Rust auth level 2 users are also treated as admin.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Player Chat Commands</span></div>
+    <div class="code-block">
+      /wc<br>
+      /wc top<br>
+      /wc pay &lt;player&gt; &lt;amount&gt;<br>
+      /wctoggle<br>
+      /bounty set &lt;player&gt; &lt;amount&gt;<br>
+      /bounty cancel &lt;player&gt;<br>
+      /bounty mine<br>
+      /bounty onme<br>
+      /shop
+    </div>
+    <ul>
+      <li><strong>/wc</strong> - Shows your current Warrior Coins balance.</li>
+      <li><strong>/wc top</strong> - Shows top 10 balances.</li>
+      <li><strong>/wc pay</strong> - Sends WC to another player.</li>
+      <li><strong>/wctoggle</strong> - Turns the WC HUD on/off.</li>
+      <li><strong>/bounty ...</strong> - Full bounty placement, cancel, and status controls.</li>
+      <li><strong>/shop</strong> - Opens the player shop UI.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Admin Commands</span></div>
+    <div class="code-block">
+      /wc set &lt;player&gt; &lt;amount&gt;<br>
+      /wc give &lt;player&gt; &lt;amount&gt;<br>
+      /wc take &lt;player&gt; &lt;amount&gt;<br>
+      /wc wipe<br>
+      /wcadmin
+    </div>
+    <ul>
+      <li><strong>/wc set</strong> - Set a player balance to an exact value.</li>
+      <li><strong>/wc give</strong> - Add WC to a player.</li>
+      <li><strong>/wc take</strong> - Remove WC from a player.</li>
+      <li><strong>/wc wipe</strong> - Wipes balances, bounties, and daily bonus tracking.</li>
+      <li><strong>/wcadmin</strong> - Opens the in-game shop admin editor UI.</li>
+    </ul>
+    <p>Admin access requires either <code>warriorcoins.admin</code> or Rust auth level 2.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Shop Delivery Types</span></div>
+    <ul>
+      <li><strong>item</strong> - Gives item shortname + amount (optional workshop skin ID supported).</li>
+      <li><strong>command</strong> - Runs a configured console command after purchase.</li>
+      <li>Each shop listing supports cost, cooldown, category, icon URL, and enabled state.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Data Files Created</span></div>
+    <div class="code-block">
+      WarriorCoins/balances<br>
+      WarriorCoins/bounties<br>
+      WarriorCoins/daily<br>
+      WarriorCoins/shop<br>
+      WarriorCoins/shop_cooldowns
+    </div>
+    <p>These are stored under the Oxide data path and are read on init / saved during runtime and unload.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Core Config Defaults</span></div>
+    <div class="code-block">
+      CurrencyNameShort: WC
+      CurrencyNameLong: Warrior Coins
+      EarnIntervalSeconds: 300
+      EnableEarnMessages: false
+      DailyLoginBonusEnabled: true
+      DailyLoginBonusAmount: 25
+      ProcessDeathHook: true
+      ShopGridColumns: 6
+      ShopGridRows: 3
+    </div>
+    <p>Timed earnings and daily bonus values can be tuned to fit your server economy. Shop branding, logo, and UI font are also configurable.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Quick Setup for Server Owners</span></div>
+    <ol>
+      <li>Install <code>WarriorCoins.cs</code> in your plugins folder and reload it.</li>
+      <li>Assign earn permissions to your player/VIP groups.</li>
+      <li>Give admin staff <code>warriorcoins.admin</code> (or auth level 2).</li>
+      <li>Use <code>/wcadmin</code> in-game to create shop listings.</li>
+      <li>Optionally tune config values for interval speed, bonus amount, and shop branding.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Notes &amp; Troubleshooting</span></div>
+    <ul>
+      <li><strong>Players not earning coins:</strong> Ensure they have at least one <code>warriorcoins.earn.*</code> permission.</li>
+      <li><strong>No bounty payout:</strong> Verify <code>ProcessDeathHook</code> is enabled and kills are player-vs-player.</li>
+      <li><strong>Shop purchase issues:</strong> Validate shortnames, command syntax, and item cooldown settings.</li>
+      <li><strong>Need a full reset:</strong> Use <code>/wc wipe</code> (admin only).</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Warrior Coins - Created by WeekendWarrior</p>
+    <p>Rust (Oxide/uMod) - Version 0.1.0</p>
+  </div>
+
+</body>
+</html>

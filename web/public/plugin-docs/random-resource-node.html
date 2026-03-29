@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Resource Node - Plugin Documentation</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 800px; margin: 0 auto; padding: 24px; color: #333; line-height: 1.5; }
+    .header { text-align: center; padding: 24px 0; border-bottom: 3px solid #c44; margin-bottom: 28px; }
+    .header h1 { margin: 0; font-size: 28px; color: #222; }
+    .header .subtitle { color: #666; font-size: 14px; margin-top: 6px; }
+    .credit { background: #f5f5f5; padding: 10px 16px; border-radius: 6px; margin-top: 12px; font-size: 13px; color: #555; }
+    .section { margin: 24px 0; }
+    .section-title { font-size: 18px; color: #c44; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #e0e0e0; }
+    .section-title .icon { margin-right: 6px; }
+    ul, ol { margin: 8px 0; padding-left: 22px; }
+    li { margin: 4px 0; }
+    .code-block { background: #f8f8f8; padding: 12px 16px; border-radius: 6px; font-family: Consolas, monospace; font-size: 13px; margin: 10px 0; border-left: 4px solid #c44; }
+    .permissions-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 6px; overflow: hidden; }
+    .permissions-table th { background: #c44; color: white; padding: 10px 12px; text-align: left; }
+    .permissions-table td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+    .permissions-table tr:nth-child(even) { background: #fafafa; }
+    .permissions-table tr:last-child td { border-bottom: none; }
+    code { font-family: Consolas, monospace; font-size: 0.95em; }
+    .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #888; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Random Resource Node</h1>
+    <p class="subtitle">Plugin Documentation for Rust (Oxide/uMod)</p>
+    <p class="subtitle">Version 1.3.9 · Author: Rust Server Solutions</p>
+    <div class="credit">Created for server owners - complete setup, permissions, commands, and configuration reference</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Overview</span></div>
+    <p>
+      Random Resource Node spawns a single <strong>infinite</strong> ore vein at a random location inside a configured circle.
+      It can run as a timed <strong>event</strong> (spawns every interval, despawns after a duration), or as an <strong>always-on</strong> system
+      (a vein is always present and relocates when the duration ends).
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Requirements</span></div>
+    <ul>
+      <li>Rust server with Oxide/uMod installed.</li>
+      <li>No external plugin dependencies are required.</li>
+      <li>To use admin commands, admins need <code>randomresourcenode.admin</code> (or Rust auth level 2).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">What the Plugin Handles</span></div>
+    <ul>
+      <li><strong>Random vein spawning:</strong> Selects a random ore prefab from your configured list, then spawns it at a safe surface location.</li>
+      <li><strong>Infinite mining:</strong> Automatically refills the node’s ResourceDispenser amounts after gathers so it never depletes.</li>
+      <li><strong>Optional announcements:</strong> Broadcasts a customizable message when a vein spawns, including map grid and duration.</li>
+      <li><strong>World map markers:</strong> Optional red radius circle marker + vending marker at the node position.</li>
+      <li><strong>Discovery flare:</strong> Optional “champagne boomer” firework near the node to help players find it.</li>
+      <li><strong>HQM bonus (metal only):</strong> Optional extra <code>hq.metal.ore</code> granted while mining the active metal vein.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Permissions</span></div>
+    <table class="permissions-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>randomresourcenode.admin</td>
+          <td>Access to <code>/rrn</code> admin chat command</td>
+          <td>Rust auth level 2 is also allowed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Player Chat Commands</span></div>
+    <p>This plugin does not include player-facing commands by default (only admin tools).</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Admin Commands</span></div>
+    <div class="code-block">
+      /rrn<br>
+      /rrn here<br>
+      /rrn respawn<br>
+      /rrn pos<br>
+      /rrn griddebug
+    </div>
+    <ul>
+      <li><strong>/rrn</strong> - Shows help and the current running mode.</li>
+      <li><strong>/rrn here</strong> - Sets the spawn center (<code>CenterX</code>/<code>CenterZ</code>) to your current position and saves the config.</li>
+      <li><strong>/rrn respawn</strong> - Forces a spawn immediately (in event mode, timers are reset).</li>
+      <li><strong>/rrn pos</strong> - Shows the active node world position and approximate grid.</li>
+      <li><strong>/rrn griddebug</strong> - Prints grid math diagnostics (extent, cell size, indices) for you and the node.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Core Config Defaults</span></div>
+    <div class="code-block">
+      EventIntervalMinutes: 60<br>
+      NodeDurationMinutes: 45<br>
+      CenterX: 0<br>
+      CenterZ: 0<br>
+      SpawnRadiusMeters: 400<br>
+      MaxSpawnAttempts: 40<br>
+      MinDistanceFromPlayers: 25<br>
+      MaxMetresBelowHeightmapForSurface: 12<br>
+      AnnounceSpawn: true<br>
+      AnnouncementFormat: (multi-line string)<br>
+      AnnouncementGridCellMeters: 0<br>
+      DisableWorldMapMarkers: false<br>
+      MapRedCircleRadius: 0.75<br>
+      ExpandOrePrefabToBiomeFolders: true<br>
+      DisableDiscoveryFlare: false<br>
+      GrantHqmWhenMiningMetalVein: true<br>
+      MetalVeinHqmPerMetalOreRatio: 0.04<br>
+      MetalVeinHqmMinPerGather: 1<br>
+      MetalVeinHqmMaxPerGather: 3<br>
+      OrePrefabPaths:<br>
+      - assets/bundled/prefabs/autospawn/resource/ores/stone-ore.prefab<br>
+      - assets/bundled/prefabs/autospawn/resource/ores/metal-ore.prefab<br>
+      - assets/bundled/prefabs/autospawn/resource/ores/sulfur-ore.prefab
+    </div>
+    <ul>
+      <li><strong>Event vs always-on:</strong> Set <code>EventIntervalMinutes</code> &gt; 0 for event mode; set it to <code>0</code> for always-on mode.</li>
+      <li><strong>Spawn area:</strong> Node will spawn within <code>SpawnRadiusMeters</code> of (<code>CenterX</code>, <code>CenterZ</code>).</li>
+      <li><strong>Prefab compatibility:</strong> If a prefab fails to spawn, update <code>OrePrefabPaths</code> for your Rust build.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Quick Setup for Server Owners</span></div>
+    <ol>
+      <li>Install <code>RandomResourceNode.cs</code> in your Oxide/uMod plugins folder and reload it.</li>
+      <li>Run <code>/rrn here</code> in-game (admin) to set the center point.</li>
+      <li>Adjust <code>SpawnRadiusMeters</code> (and <code>MinDistanceFromPlayers</code> if needed) to fit your server.</li>
+      <li>Choose a mode:
+        <ul>
+          <li><strong>Event mode:</strong> Set <code>EventIntervalMinutes</code> to the minutes between spawn starts (e.g. 60).</li>
+          <li><strong>Always-on mode:</strong> Set <code>EventIntervalMinutes</code> to <code>0</code> so a node is always present.</li>
+        </ul>
+      </li>
+      <li>Optionally customize the announcement message (<code>AnnouncementFormat</code>) and map markers.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">Notes &amp; Troubleshooting</span></div>
+    <ul>
+      <li><strong>Nothing spawns:</strong> Make sure <code>CenterX</code>/<code>CenterZ</code> are set (use <code>/rrn here</code>) and that <code>SpawnRadiusMeters</code> isn’t placing attempts outside valid terrain.</li>
+      <li><strong>Repeated “spawn failed” warnings:</strong> The plugin retries after 60 seconds when it can’t find a valid spot or can’t create the entity. Increase <code>MaxSpawnAttempts</code>, reduce <code>MinDistanceFromPlayers</code>, or reduce <code>SpawnRadiusMeters</code>.</li>
+      <li><strong>Node spawns under objects / clipped:</strong> The plugin raycasts down from above terrain to find an open surface. Tight maps may need tuning <code>MaxMetresBelowHeightmapForSurface</code>.</li>
+      <li><strong>Map markers not visible:</strong> Ensure <code>DisableWorldMapMarkers</code> is false. Some Rust builds change prefab paths; if you see warnings about marker prefabs, it’s usually a Rust update compatibility issue.</li>
+      <li><strong>Discovery flare not working:</strong> Set <code>DisableDiscoveryFlare</code> to true if your server build can’t spawn/ignite the champagne boomer prefab.</li>
+      <li><strong>HQM bonus not granted:</strong> Bonus only applies when mining the <em>active</em> metal vein (not stone/sulfur). Adjust <code>MetalVeinHqmPerMetalOreRatio</code> and min/max per gather.</li>
+      <li><strong>Grid looks “off” compared to your overlay:</strong> Set <code>AnnouncementGridCellMeters</code> to match your overlay cell size (0 uses ~146.3m cells).</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Random Resource Node - Created by Rust Server Solutions</p>
+    <p>Rust (Oxide/uMod) - Version 1.3.9</p>
+  </div>
+
+</body>
+</html>
