@@ -6,6 +6,7 @@
       "title": "AdminMenu",
       "version": "2.1.11",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -14,6 +15,7 @@
       "title": "Admin Radar",
       "version": "5.4.2",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -22,6 +24,7 @@
       "title": "AdvancedMLRS",
       "version": "4.5.0",
       "hidden": false,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -30,6 +33,7 @@
       "title": "AdvancedRefinery",
       "version": "6.0.4",
       "hidden": false,
+      "premium": false,
       "description": "Converts a small furnace (while you look at it) into a refinery: unlocks slots for wood, low grade, and diesel, then on a timer burns wood + LGF to craft diesel barrels. Requires permission advancedrefinery.use; use /refineryadd. Config: LowGradePerDiesel, Multiplier, TickRate.",
       "commands": [
         "/refineryadd"
@@ -41,6 +45,7 @@
       "title": "Advert Messages",
       "version": "3.0.2",
       "hidden": false,
+      "premium": false,
       "description": "Rotating server messages broadcast to everyone in chat on a timer. Admins set the message list, interval, and random vs sequential order in the plugin config. Players do not use a command—they only see the adverts.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/advert-messages"
@@ -50,6 +55,7 @@
       "title": "Always Day",
       "version": "1.0.1",
       "hidden": false,
+      "premium": false,
       "description": "Locks server time so daylight (or your chosen time) stays put—no player commands; it’s all server-side config.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/always-day"
@@ -59,6 +65,7 @@
       "title": "AlwaysHotSpot",
       "version": "1.0.2",
       "hidden": false,
+      "premium": false,
       "description": "Harmony mod that guarantees you trigger a hot spot every time you hit trees and ore nodes—passive farming QoL, no chat commands.",
       "commands": [],
       "documentationUrl": "https://lone.design/product/alwayshotspot-rust-harmony/"
@@ -68,6 +75,7 @@
       "title": "RustEdit APC Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -76,6 +84,7 @@
       "title": "AutoAdd",
       "version": "1.1.5",
       "hidden": false,
+      "premium": false,
       "description": "QoL for furnaces, campfires, and BBQs: tap icons to pull ore/wood and start smelting (green = load & cook, red = pull outputs). Needs permission autoadd.allow; Image Library required. Works with Furnace Splitter / Simple Splitter when present.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/autoadd"
@@ -85,6 +94,7 @@
       "title": "AutoCodeLock",
       "version": "3.0.11",
       "hidden": false,
+      "premium": false,
       "description": "Auto-place codelocks on doors, boxes, lockers, and TCs; set default and guest codes; optional door closers; full settings UI. Requires the Chaos extension. Permission-gated per feature.",
       "commands": [
         "/codelock"
@@ -96,6 +106,7 @@
       "title": "RustEdit Automatic Updater",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -104,6 +115,7 @@
       "title": "Backpacks",
       "version": "3.17.2",
       "hidden": false,
+      "premium": false,
       "description": "Extra backpack inventory beyond your hotbar/belt—open, page, and fetch items via chat (exact commands depend on config and permissions).",
       "commands": [
         "/backpack",
@@ -118,6 +130,7 @@
       "title": "Better Chat",
       "version": "5.2.15",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -126,6 +139,7 @@
       "title": "Better Chat Mute",
       "version": "1.2.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -134,6 +148,7 @@
       "title": "BetterLoot",
       "version": "4.1.10",
       "hidden": false,
+      "premium": false,
       "description": "Rebuilt loot system: crate/barrel/entity drops are defined and balanced in config—what you find in the world is tuned server-side (not a player slash command).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/better-loot"
@@ -143,6 +158,7 @@
       "title": "Better No Workbench",
       "version": "2.0.1",
       "hidden": false,
+      "premium": false,
       "description": "Players with BetterNoWorkbench.on get workbench Tier 3 crafting (or Tier 1–2 per config) without standing at a bench—server QoL.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/better-no-workbench"
@@ -152,6 +168,7 @@
       "title": "BetterSentryTurrets",
       "version": "1.8.4",
       "hidden": false,
+      "premium": false,
       "description": "Deployable sentry that can act as a normal Auto Turret or a SAM site depending on config. Permission sentryturrets.admin for the chat command.",
       "commands": [
         "/sentry"
@@ -163,6 +180,7 @@
       "title": "BGrade",
       "version": "1.1.6",
       "hidden": false,
+      "premium": false,
       "description": "Upgrade building blocks with a command (common: /bgrade) instead of hammer cycling—speed-build QoL.",
       "commands": [
         "/bgrade"
@@ -174,6 +192,7 @@
       "title": "Blueprint Manager",
       "version": "2.1.4",
       "hidden": false,
+      "premium": false,
       "description": "Control which blueprints players know—unlock, lock, or manage learn states (admin-focused; exact commands in plugin docs).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/blueprint-manager"
@@ -183,6 +202,7 @@
       "title": "Building Grades",
       "version": "1.0.13",
       "hidden": false,
+      "premium": false,
       "description": "Building grade tweaks and automation—how walls/floors upgrade is governed by config and permissions.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/building-grades"
@@ -192,6 +212,7 @@
       "title": "Building Workbench",
       "version": "1.4.2",
       "hidden": false,
+      "premium": false,
       "description": "Workbench-related building rules—ties crafting tiers to workbench presence or placement (see uMod page for your version).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/building-workbench"
@@ -201,6 +222,7 @@
       "title": "Chaos Commands",
       "version": "1.0.60",
       "hidden": false,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -209,6 +231,7 @@
       "title": "ChaosExtensionDownloader",
       "version": "1.0.50",
       "hidden": false,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -217,6 +240,7 @@
       "title": "ChaosNPC",
       "version": "3.0.39",
       "hidden": false,
+      "premium": false,
       "description": "Extension/API for custom AI NPCs used by other k1lly0u plugins—not a player feature by itself. Admins: extension chat /chaosnpc.wipenpcs; console chaosnpc.version, chaosnpc.update, chaosnpc.wipenpcs.",
       "commands": [],
       "documentationUrl": "https://chaoscode.io/resources/chaosnpc.216/"
@@ -226,6 +250,7 @@
       "title": "ChaosNPC Commands",
       "version": "3.0.39",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -234,6 +259,7 @@
       "title": "Chat Clear",
       "version": "2.0.0",
       "hidden": false,
+      "premium": false,
       "description": "Clears in-game chat for everyone or selected players (admin/moderation tool).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/chat-clear"
@@ -243,6 +269,7 @@
       "title": "Clans",
       "version": "0.2.8",
       "hidden": false,
+      "premium": false,
       "description": "Clans with alliances, invites, and shared play—chat commands for clan management (/clan etc.; see uMod for full list).",
       "commands": [
         "/clan"
@@ -254,6 +281,7 @@
       "title": "Compound Options",
       "version": "1.2.6",
       "hidden": false,
+      "premium": false,
       "description": "Customize safe zone / compound behaviour (vendors, damage rules, etc.) via config.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/compound-options"
@@ -263,6 +291,7 @@
       "title": "Copy Paste",
       "version": "4.2.7",
       "hidden": false,
+      "premium": false,
       "description": "Copy and paste bases and structures—powerful admin build tool (paste files, offsets, rotation).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/copy-paste"
@@ -272,6 +301,7 @@
       "title": "Crafting Controller",
       "version": "3.3.4",
       "hidden": false,
+      "premium": false,
       "description": "Adjust craft times, blocked items, and crafting rules globally or per permission.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/crafting-controller"
@@ -281,6 +311,7 @@
       "title": "RustEdit Custom Topology Layers",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -289,6 +320,7 @@
       "title": "Death Notes",
       "version": "6.5.5",
       "hidden": false,
+      "premium": false,
       "description": "Kill feed messages in chat: who killed whom, weapon, distance—readable PvP/PvE feedback.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/death-notes"
@@ -298,6 +330,7 @@
       "title": "RustEdit Deployable Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -306,6 +339,7 @@
       "title": "RustEdit Desk Keycard Spawner",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -314,6 +348,7 @@
       "title": "RustEdit Diesel Collectable Spawner",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -322,6 +357,7 @@
       "title": "Discord Extension",
       "version": "3.1.7",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -330,6 +366,7 @@
       "title": "Door Control",
       "version": "0.0.1",
       "hidden": false,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -338,6 +375,7 @@
       "title": "DynamicCupShare",
       "version": "3.1.21",
       "hidden": false,
+      "premium": false,
       "description": "Share TC auth, turrets, and code-lock access dynamically with clan, team, or friends—UI via /share. Requires Chaos extension. Admins: /shareplayer <steamid>, /dcsadmin.",
       "commands": [
         "/share",
@@ -350,6 +388,7 @@
       "title": "Entity Owner",
       "version": "3.4.3",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -358,6 +397,7 @@
       "title": "RustEdit Excavator Rotation Correction",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -366,6 +406,7 @@
       "title": "Friends",
       "version": "3.1.3",
       "hidden": false,
+      "premium": false,
       "description": "Friend lists for teaming and plugin integration—add/remove friends via chat commands.",
       "commands": [
         "/friend"
@@ -377,6 +418,7 @@
       "title": "Gather Manager",
       "version": "2.2.78",
       "hidden": false,
+      "premium": false,
       "description": "Multiplier and bonus tuning for gathering (wood, ore, corpses, etc.)—rates are server config.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/gather-manager"
@@ -386,6 +428,7 @@
       "title": "Helicopter Instant Takeoff",
       "version": "0.1.0",
       "hidden": false,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -394,6 +437,7 @@
       "title": "Image Library",
       "version": "2.0.64",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -402,6 +446,7 @@
       "title": "Instant Barrel",
       "version": "1.3.2",
       "hidden": false,
+      "premium": false,
       "description": "Optional 1 HP barrels/signs and loot straight to inventory when destroyed. Permission InstantBarrel.on. Works with tools and optionally weapons (range in config).",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/instant-barrel"
@@ -411,6 +456,7 @@
       "title": "Instant Smelt",
       "version": "2.1.2",
       "hidden": false,
+      "premium": false,
       "description": "Faster or instant smelting in furnaces and similar—throughput controlled in config.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/instant-smelt"
@@ -420,6 +466,7 @@
       "title": "Inventory Viewer",
       "version": "4.1.2",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -428,6 +475,7 @@
       "title": "RustEdit IO Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -436,6 +484,7 @@
       "title": "Item Retriever",
       "version": "0.7.7",
       "hidden": false,
+      "premium": false,
       "description": "Retrieve items from unreachable places (stuck in world, invalid deployables)—player or admin recovery tool.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/item-retriever"
@@ -445,6 +494,7 @@
       "title": "RustEdit JunkPile Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -453,6 +503,7 @@
       "title": "Kits",
       "version": "4.4.8",
       "hidden": false,
+      "premium": false,
       "description": "Starter, VIP, and custom kits with cooldowns and permissions—typically /kit and /kit list.",
       "commands": [
         "/kit",
@@ -465,6 +516,7 @@
       "title": "LockOnRockets",
       "version": "0.3.23",
       "hidden": false,
+      "premium": false,
       "description": "Smoke rockets become lock-on missiles (vehicles, heli, players, etc. per config). Optional /craft.lockon with lockonrockets.craft. Pair with loot that adds smoke rockets.",
       "commands": [
         "/craft.lockon"
@@ -476,6 +528,7 @@
       "title": "RustEdit Loot Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -484,6 +537,7 @@
       "title": "Magic Stack",
       "version": "0.0.1",
       "hidden": false,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -492,6 +546,7 @@
       "title": "Map Marker Api",
       "version": "0.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -500,6 +555,7 @@
       "title": "Monument Finder",
       "version": "3.1.5",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -508,6 +564,7 @@
       "title": "No Give Notices",
       "version": "0.3.0",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -516,6 +573,7 @@
       "title": "RustEdit NPC Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -524,6 +582,7 @@
       "title": "NTeleportation",
       "version": "1.9.4",
       "hidden": false,
+      "premium": false,
       "description": "Warps, homes, TPA, and admin teleports—large command set (/tp, /home, /tpr, etc.; permissions required).",
       "commands": [
         "/home",
@@ -537,6 +596,7 @@
       "title": "RustEdit Ocean Path",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -545,6 +605,7 @@
       "title": "PayNow",
       "version": "0.0.18",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -553,6 +614,7 @@
       "title": "PlaneCrash",
       "version": "0.3.12",
       "hidden": false,
+      "premium": false,
       "description": "Callable cargo plane crash event: shoot down for loot, auto-timer, NPCs at crash site. Requires ChaosNPC. Commands: /callcrash, /callcrash help, coords or player name variants.",
       "commands": [
         "/callcrash",
@@ -565,6 +627,7 @@
       "title": "PlayerAdministration",
       "version": "1.6.9",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -573,6 +636,7 @@
       "title": "Player DLC API",
       "version": "1.6.2",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -581,6 +645,7 @@
       "title": "PlayerList",
       "version": "0.3.2",
       "hidden": false,
+      "premium": false,
       "description": "List online players in chat or UI—lightweight who’s-on for players or staff.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/player-list"
@@ -590,6 +655,7 @@
       "title": "Chaos Plugin Interface",
       "version": "1.0.60",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -598,6 +664,7 @@
       "title": "RustEdit Shop Keepers",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -606,6 +673,7 @@
       "title": "Powerless Turrets",
       "version": "3.2.10",
       "hidden": false,
+      "premium": false,
       "description": "Auto turrets (and related) can work without external power—base defence QoL.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/powerless-turrets"
@@ -615,6 +683,7 @@
       "title": "Quick Sort",
       "version": "1.8.9",
       "hidden": false,
+      "premium": false,
       "description": "Sort container and inventory items quickly via UI or commands (see plugin for your keybinds/commands).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/quick-sort"
@@ -624,6 +693,7 @@
       "title": "Random Resource Node",
       "version": "1.3.9",
       "hidden": false,
+      "premium": false,
       "description": "Spawns one infinite ore vein at a random surface location inside a configured circle—timed event or always-on—with optional spawn announcements, map markers, discovery flare, and extra HQM while mining the active metal vein. No default player chat commands; staff use /rrn (permission randomresourcenode.admin).",
       "commands": [
         "/rrn",
@@ -639,6 +709,7 @@
       "title": "Recycle",
       "version": "3.2.1",
       "hidden": false,
+      "premium": false,
       "description": "Recycler-style instant recycling from UI—turn junk into resources without running to monument recyclers.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/recycle"
@@ -648,6 +719,7 @@
       "title": "Remover Tool",
       "version": "4.3.46",
       "hidden": false,
+      "premium": false,
       "description": "Remove your own building parts—toggle remover mode via the chat command set in oxide/config (default is often /remove). Refunds configurable.",
       "commands": [
         "/remove"
@@ -659,6 +731,7 @@
       "title": "RustEdit Resource Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -667,6 +740,7 @@
       "title": "RustApp Lite",
       "version": "1.1.0",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -675,6 +749,7 @@
       "title": "Rust",
       "version": "2.0.7178",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -683,6 +758,7 @@
       "title": "RustEdit Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -691,6 +767,7 @@
       "title": "Sign Artist",
       "version": "1.4.6",
       "hidden": false,
+      "premium": false,
       "description": "Paint signs from URLs or image library—art and shop signs without external downloads for viewers.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/sign-artist"
@@ -700,6 +777,7 @@
       "title": "Simple Splitter",
       "version": "2.6.0",
       "hidden": false,
+      "premium": false,
       "description": "High-performance furnace/oven splitter: mixed ore splitting, smelt speed tweaks, charcoal tuning. Permission simplesplitter.use.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/simple-splitter"
@@ -709,6 +787,7 @@
       "title": "Skillz",
       "version": "2.0.0",
       "hidden": false,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -717,6 +796,7 @@
       "title": "Skinner",
       "version": "3.1.1",
       "hidden": false,
+      "premium": false,
       "description": "Skin items via skinbox UI—/skin, /sc, /si, /skinauto, team skins, imports, etc. (many commands; permissions gate each).",
       "commands": [
         "/skin",
@@ -731,6 +811,7 @@
       "title": "Sort Button",
       "version": "2.7.0",
       "hidden": false,
+      "premium": false,
       "description": "Adds sort controls to containers so you can order stacks quickly.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/sort-button"
@@ -740,6 +821,7 @@
       "title": "RustEdit Spawn Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -748,6 +830,7 @@
       "title": "Spawn Heli",
       "version": "3.2.0",
       "hidden": false,
+      "premium": false,
       "description": "Spawn, fetch, and despawn minicopter, scrap transport heli, and attack heli—the exact chat commands are set in oxide/config (SpawnHeli.json), with cooldowns and permissions per vehicle.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/spawn-heli"
@@ -757,6 +840,7 @@
       "title": "Stack Modifier",
       "version": "2.9.8",
       "hidden": false,
+      "premium": false,
       "description": "Custom stack sizes and stacking behaviour (Harmony); includes optional GUI editor. Player-visible stacks; /stackmodifier is admin editor when enabled in config.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/stack-modifier"
@@ -766,6 +850,7 @@
       "title": "TC Manager",
       "version": "1.0.5",
       "hidden": false,
+      "premium": false,
       "description": "Tool cupboard management QoL—auth lists, limits, or bulk actions depending on version (check uMod).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/tc-manager"
@@ -775,6 +860,7 @@
       "title": "Trade",
       "version": "1.2.45",
       "hidden": false,
+      "premium": false,
       "description": "Safe player-to-player trading UI—invite, confirm, and exchange items without dropping on ground.",
       "commands": [
         "/trade"
@@ -786,6 +872,7 @@
       "title": "Turret Loadouts",
       "version": "1.2.0",
       "hidden": false,
+      "premium": false,
       "description": "Save and apply ammo/loadout presets for auto turrets—faster base defence setup.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/turret-loadouts"
@@ -795,6 +882,7 @@
       "title": "Unity",
       "version": "2.0.3777",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -803,6 +891,7 @@
       "title": "UpdateChecker",
       "version": "4.3.2",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -811,6 +900,7 @@
       "title": "UpgradeWorkbenches",
       "version": "2.1.4",
       "hidden": false,
+      "premium": false,
       "description": "Upgrade workbench tiers in place or via rules defined in config—building progression QoL.",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/upgrade-workbenches"
@@ -820,6 +910,7 @@
       "title": "Vanish",
       "version": "2.1.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -828,6 +919,7 @@
       "title": "RustEdit Vehicle Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -836,6 +928,7 @@
       "title": "RustEdit Vending Core",
       "version": "1.0.1",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -844,6 +937,7 @@
       "title": "VipInspector",
       "version": "0.2.0",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -852,6 +946,7 @@
       "title": "Warp System",
       "version": "1.9.15",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -860,6 +955,7 @@
       "title": "Warrior Coins",
       "version": "0.1.0",
       "hidden": false,
+      "premium": false,
       "description": "Server economy (WC): timed passive earnings by permission tier, optional daily login bonus, player bounties on kills, /wc pay transfers, in-game /shop with item or command delivery and cooldowns, optional balance HUD, and /wcadmin shop editor for staff (warriorcoins.admin).",
       "commands": [
         "/wc",
@@ -879,6 +975,7 @@
       "title": "Weapon Modifier",
       "version": "1.0.3",
       "hidden": false,
+      "premium": false,
       "description": "Staff-facing weapon tuning: magazine size, infinite ammo/condition, drop on death, craft preload/skin/condition. Uses /modify and /switchperm with permission (see Codefling docs).",
       "commands": [
         "/modify",
@@ -891,6 +988,7 @@
       "title": "WebsiteHighlightsExport",
       "version": "1.2.0",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -899,6 +997,7 @@
       "title": "Welcomer",
       "version": "2.1.0",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -907,6 +1006,7 @@
       "title": "Where's My Corpse",
       "version": "0.6.2",
       "hidden": false,
+      "premium": false,
       "description": "After respawn (or on demand), shows direction and distance to your corpse so you can recover your loot.",
       "commands": [
         "/where"
@@ -918,6 +1018,7 @@
       "title": "Wipe Data Cleaner",
       "version": "1.4.3",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     },
@@ -926,6 +1027,7 @@
       "title": "Zone Manager",
       "version": "3.1.10",
       "hidden": true,
+      "premium": false,
       "description": "",
       "commands": []
     }

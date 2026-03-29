@@ -14,6 +14,8 @@ export type InstalledPluginRow = {
   commands?: string[] | string;
   /** Docs page (umod, GitHub, etc.); optional, merged on server export */
   documentationUrl?: string;
+  /** If true, highlight title in premium accent on the home page */
+  premium?: boolean;
 };
 
 export type WebsiteHighlightsFile = {
@@ -29,6 +31,7 @@ export type HighlightPlugin = {
   description?: string;
   commands?: string[];
   documentationUrl?: string;
+  premium?: boolean;
 };
 
 const FALLBACK_HIGHLIGHTS =
@@ -58,6 +61,13 @@ function rowIsHidden(p: InstalledPluginRow): boolean {
   return false;
 }
 
+function rowIsPremium(p: InstalledPluginRow): boolean {
+  const v = p.premium as unknown;
+  if (v === true || v === 1) return true;
+  if (typeof v === "string" && /^true$/i.test(v.trim())) return true;
+  return false;
+}
+
 function pluginsFromInstalled(data: WebsiteHighlightsFile): HighlightPlugin[] {
   if (!Array.isArray(data.installedPlugins) || data.installedPlugins.length === 0) {
     return [];
@@ -76,6 +86,7 @@ function pluginsFromInstalled(data: WebsiteHighlightsFile): HighlightPlugin[] {
       if (desc) row.description = desc;
       if (cmds?.length) row.commands = cmds;
       if (docUrl) row.documentationUrl = docUrl;
+      if (rowIsPremium(p)) row.premium = true;
       return row;
     })
     .filter((p) => p.title);

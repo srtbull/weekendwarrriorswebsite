@@ -58,7 +58,11 @@ function HighlightsInteractive({
             {i > 0 ? " · " : null}
             <button
               type="button"
-              className={styles.pluginTrigger}
+              className={
+                p.premium
+                  ? `${styles.pluginTrigger} ${styles.pluginTriggerPremium}`
+                  : styles.pluginTrigger
+              }
               onClick={() => setOpen(p)}
               aria-haspopup="dialog"
             >
@@ -92,7 +96,14 @@ function HighlightsInteractive({
             >
               ×
             </button>
-            <h2 id="plugin-modal-title" className={styles.modalTitle}>
+            <h2
+              id="plugin-modal-title"
+              className={
+                open.premium
+                  ? `${styles.modalTitle} ${styles.modalTitlePremium}`
+                  : styles.modalTitle
+              }
+            >
               {open.title}
             </h2>
             <p className={styles.modalMeta}>

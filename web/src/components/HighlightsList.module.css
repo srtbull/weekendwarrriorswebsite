@@ -22,6 +22,16 @@
   text-decoration-color: #ffb24a;
 }
 
+.pluginTriggerPremium {
+  color: #7aab1f;
+  text-decoration-color: rgba(122, 171, 31, 0.55);
+}
+
+.pluginTriggerPremium:hover {
+  color: #93c428;
+  text-decoration-color: #93c428;
+}
+
 .suffix {
   white-space: normal;
 }
@@ -102,6 +112,10 @@
   font-size: 1.75rem;
   letter-spacing: 0.06em;
   color: #fff;
+}
+
+.modalTitlePremium {
+  color: #7aab1f;
 }
 
 .modalMeta {

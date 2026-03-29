@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Oxide.Core;
 using Oxide.Core.Libraries.Covalence;
 using Oxide.Core.Plugins;
 
 namespace Oxide.Plugins
 {
-    [Info("WebsiteHighlightsExport", "WeekenedWarriors", "1.1.0")]
-    [Description("Exports all Oxide plugins to JSON. Edit oxide/data JSON: set hidden=true to hide a plugin on the website. Values persist across exports.")]
+    [Info("WebsiteHighlightsExport", "WeekenedWarriors", "1.5.0")]
+    [Description("Exports plugins to oxide/data JSON. Manual fields persist from the previous export; optional WebsiteHighlights.annotations.json overrides per plugin (safest for edits).")]
     public class WebsiteHighlightsExport : CovalencePlugin
     {
         private const string LogName = "WebsiteHighlightsExport";
@@ -24,6 +26,10 @@ namespace Oxide.Plugins
 
             [JsonProperty(PropertyName = "Enable Debug Logging")]
             public bool DebugLogging = false;
+
+            /// <summary> Optional oxide/data JSON: { \"PluginName\": { \"hidden\", \"premium\", \"description\", \"commands\", \"documentationUrl\" } }. Applied on top of merge from the main export file — use this so manual work survives replacing WebsiteHighlights.json. Empty = disabled. </summary>
+            [JsonProperty(PropertyName = "Annotations Data File Name (oxide/data, no .json; blank = off)")]
+            public string AnnotationsDataFileName = "WebsiteHighlights.annotations";
         }
 
         private class InstalledPluginDto
@@ -34,6 +40,18 @@ namespace Oxide.Plugins
 
             /// <summary> If true, this plugin is omitted from the website Highlights line. Default false = shown. </summary>
             [JsonProperty("hidden")] public bool Hidden { get; set; }
+
+            /// <summary> If true, website shows this plugin title in premium accent color. Merged from prior export / annotations. </summary>
+            [JsonProperty("premium")] public bool Premium { get; set; }
+
+            /// <summary> Short blurb for the website modal; not auto-filled — edit JSON and it persists on re-export. </summary>
+            [JsonProperty("description")] public string Description { get; set; }
+
+            /// <summary> Chat/console commands to show in the modal; edit JSON, persists on re-export. </summary>
+            [JsonProperty("commands")] public List<string> Commands { get; set; }
+
+            /// <summary> Public docs URL (e.g. uMod plugin page). Optional; persists on re-export. Used by website enrich script. </summary>
+            [JsonProperty("documentationUrl")] public string DocumentationUrl { get; set; }
         }
 
         private class HighlightsExportDto
@@ -41,6 +59,16 @@ namespace Oxide.Plugins
             [JsonProperty("generatedAtUtc")] public DateTime GeneratedAtUtc { get; set; }
             [JsonProperty("installedPlugins")] public List<InstalledPluginDto> InstalledPlugins { get; set; }
             [JsonProperty("websiteHighlightLabels")] public List<string> WebsiteHighlightLabels { get; set; }
+        }
+
+        /// <summary> Per-plugin overrides read from WebsiteHighlights.annotations.json (flat object keyed by Oxide plugin name). </summary>
+        private class PluginAnnotationDto
+        {
+            public bool? Hidden { get; set; }
+            public bool? Premium { get; set; }
+            public string Description { get; set; }
+            public List<string> Commands { get; set; }
+            public string DocumentationUrl { get; set; }
         }
 
         private PluginConfig config;
@@ -94,9 +122,10 @@ namespace Oxide.Plugins
             player?.Reply("[WebsiteHighlightsExport] Wrote JSON to oxide/data.");
         }
 
-        private Dictionary<string, bool> LoadPreviousHiddenByName()
+        /// <summary> Prior rows by plugin name — merge hidden, premium, description, commands across exports. </summary>
+        private Dictionary<string, InstalledPluginDto> LoadPreviousRowsByName()
         {
-            var map = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+            var map = new Dictionary<string, InstalledPluginDto>(StringComparer.OrdinalIgnoreCase);
             try
             {
                 var existing = Interface.Oxide.DataFileSystem.ReadObject<HighlightsExportDto>(config.OutputDataFileName);
@@ -105,13 +134,58 @@ namespace Oxide.Plugins
                 foreach (var row in existing.InstalledPlugins)
                 {
                     if (string.IsNullOrEmpty(row?.Name)) continue;
-                    map[row.Name] = row.Hidden;
+                    map[row.Name] = row;
                 }
             }
             catch (Exception ex)
             {
-                if (config.DebugLogging)
-                    LogToFile(LogName, $"[DEBUG] Could not read previous export for merge: {ex.Message}", this);
+                PrintWarning(
+                    $"[WebsiteHighlightsExport] Could not read prior {config.OutputDataFileName}.json for merge — hidden/description/commands will reset for this run unless annotations file supplies them. ({ex.Message})");
+                LogToFile(LogName, $"[WARN] Previous export merge failed: {ex}", this);
+            }
+
+            return map;
+        }
+
+        /// <summary> Optional flat JSON: {{ \"Kits\": {{ \"description\": \"...\" }} }}. Keys = Oxide plugin names. </summary>
+        private Dictionary<string, PluginAnnotationDto> LoadAnnotationsByName()
+        {
+            var map = new Dictionary<string, PluginAnnotationDto>(StringComparer.OrdinalIgnoreCase);
+            if (string.IsNullOrWhiteSpace(config.AnnotationsDataFileName)) return map;
+
+            var baseName = config.AnnotationsDataFileName.Trim();
+            if (baseName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+                baseName = baseName.Substring(0, baseName.Length - 5);
+
+            var path = Path.Combine(Interface.Oxide.DataDirectory, baseName + ".json");
+            if (!File.Exists(path)) return map;
+
+            try
+            {
+                var text = File.ReadAllText(path);
+                var root = JObject.Parse(text);
+                foreach (var prop in root.Properties())
+                {
+                    var key = prop.Name?.Trim();
+                    if (string.IsNullOrEmpty(key)) continue;
+                    try
+                    {
+                        map[key] = prop.Value.ToObject<PluginAnnotationDto>();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (config.DebugLogging)
+                            LogToFile(LogName, $"[DEBUG] Skip annotation key '{key}': {ex.Message}", this);
+                    }
+                }
+
+                if (map.Count > 0)
+                    LogToFile(LogName, $"[INFO] Loaded {map.Count} plugin annotation(s) from {baseName}.json", this);
+            }
+            catch (Exception ex)
+            {
+                PrintWarning($"[WebsiteHighlightsExport] Could not read annotations file {path}: {ex.Message}");
+                LogToFile(LogName, $"[WARN] Annotations load failed: {ex}", this);
             }
 
             return map;
@@ -121,21 +195,42 @@ namespace Oxide.Plugins
         {
             try
             {
-                var previousHidden = LoadPreviousHiddenByName();
+                var previousByName = LoadPreviousRowsByName();
+                var annotationsByName = LoadAnnotationsByName();
                 var installed = new List<InstalledPluginDto>();
 
                 foreach (var p in Interface.Oxide.RootPluginManager.GetPlugins())
                 {
                     if (p == null || string.IsNullOrEmpty(p.Name)) continue;
 
-                    var hidden = previousHidden.TryGetValue(p.Name, out var wasHidden) && wasHidden;
+                    previousByName.TryGetValue(p.Name, out var prev);
+                    var hidden = prev != null && prev.Hidden;
+                    var premium = prev != null && prev.Premium;
+                    var description = prev?.Description ?? string.Empty;
+                    var commands = prev?.Commands != null
+                        ? new List<string>(prev.Commands)
+                        : new List<string>();
+                    var documentationUrl = prev?.DocumentationUrl ?? string.Empty;
+
+                    if (annotationsByName.TryGetValue(p.Name, out var ann))
+                    {
+                        if (ann.Hidden.HasValue) hidden = ann.Hidden.Value;
+                        if (ann.Premium.HasValue) premium = ann.Premium.Value;
+                        if (ann.Description != null) description = ann.Description;
+                        if (ann.Commands != null) commands = new List<string>(ann.Commands);
+                        if (ann.DocumentationUrl != null) documentationUrl = ann.DocumentationUrl;
+                    }
 
                     var dto = new InstalledPluginDto
                     {
                         Name = p.Name,
                         Title = string.IsNullOrEmpty(p.Title) ? p.Name : p.Title,
                         Version = p.Version.ToString(),
-                        Hidden = hidden
+                        Hidden = hidden,
+                        Premium = premium,
+                        Description = description,
+                        Commands = commands,
+                        DocumentationUrl = documentationUrl
                     };
                     installed.Add(dto);
                 }
@@ -158,8 +253,12 @@ namespace Oxide.Plugins
 
                 var shown = highlightLabels.Count;
                 var hiddenCount = installed.Count - shown;
+                var annBase = config.AnnotationsDataFileName?.Trim();
+                var annNote = string.IsNullOrEmpty(annBase)
+                    ? string.Empty
+                    : $" Merges oxide/data/{annBase}.json if present.";
                 LogToFile(LogName,
-                    $"[INFO] Export OK — {installed.Count} plugins ({shown} visible, {hiddenCount} hidden). File: oxide/data/{config.OutputDataFileName}.json — edit 'hidden' in that file to toggle website display.",
+                    $"[INFO] Export OK — {installed.Count} plugins ({shown} visible, {hiddenCount} hidden). File: oxide/data/{config.OutputDataFileName}.json.{annNote}",
                     this);
                 Puts($"[WebsiteHighlightsExport] Wrote oxide/data/{config.OutputDataFileName}.json ({installed.Count} plugins, {shown} shown on site).");
 

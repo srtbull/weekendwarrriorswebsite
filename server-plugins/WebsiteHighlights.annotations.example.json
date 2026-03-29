@@ -1,0 +1,9 @@
+{
+  "Kits": {
+    "hidden": false,
+    "premium": false,
+    "description": "Item kits, cooldowns, and autokits.",
+    "commands": ["/kit", "/kit list"],
+    "documentationUrl": "https://umod.org/plugins/rust-kits"
+  }
+}
