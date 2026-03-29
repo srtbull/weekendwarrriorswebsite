@@ -30,8 +30,11 @@
       "title": "AdvancedRefinery",
       "version": "6.0.4",
       "hidden": false,
-      "description": "",
-      "commands": []
+      "description": "Converts a small furnace (while you look at it) into a refinery: unlocks slots for wood, low grade, and diesel, then on a timer burns wood + LGF to craft diesel barrels. Requires permission advancedrefinery.use; use /refineryadd. Config: LowGradePerDiesel, Multiplier, TickRate.",
+      "commands": [
+        "/refineryadd"
+      ],
+      "documentationUrl": "/plugin-docs/advanced-refinery.html"
     },
     {
       "name": "AdvertMessages",
