@@ -1,33 +1,39 @@
 {
-  "generatedAtUtc": "2026-03-27T05:46:03.140184Z",
+  "generatedAtUtc": "2026-03-27T06:09:20.531064Z",
   "installedPlugins": [
     {
       "name": "AdminMenu",
       "title": "AdminMenu",
       "version": "2.1.11",
       "hidden": true,
-      "premium": false
+      "premium": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AdminRadar",
       "title": "Admin Radar",
       "version": "5.4.2",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AdvancedMLRS",
       "title": "AdvancedMLRS",
       "version": "4.5.0",
       "hidden": false,
-      "premium": false
+      "premium": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AdvancedRefinery",
       "title": "AdvancedRefinery",
       "version": "6.0.4",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Converts a small furnace (while you look at it) into a refinery: unlocks slots for wood, low grade, and diesel, then on a timer burns wood + LGF to craft diesel barrels. Requires permission advancedrefinery.use; use /refineryadd. Config: LowGradePerDiesel, Multiplier, TickRate.",
       "commands": [
         "/refineryadd"
@@ -59,7 +65,7 @@
       "title": "AlwaysHotSpot",
       "version": "1.0.2",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Harmony mod that guarantees you trigger a hot spot every time you hit trees and ore nodes—passive farming QoL, no chat commands.",
       "commands": [],
       "documentationUrl": "https://lone.design/product/alwayshotspot-rust-harmony/"
@@ -69,14 +75,16 @@
       "title": "RustEdit APC Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AutoAdd",
       "title": "AutoAdd",
       "version": "1.1.5",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "QoL for furnaces, campfires, and BBQs: tap icons to pull ore/wood and start smelting (green = load & cook, red = pull outputs). Needs permission autoadd.allow; Image Library required. Works with Furnace Splitter / Simple Splitter when present.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/autoadd"
@@ -86,7 +94,7 @@
       "title": "AutoCodeLock",
       "version": "3.0.11",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Auto-place codelocks on doors, boxes, lockers, and TCs; set default and guest codes; optional door closers; full settings UI. Requires the Chaos extension. Permission-gated per feature.",
       "commands": [
         "/codelock"
@@ -98,7 +106,9 @@
       "title": "RustEdit Automatic Updater",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Backpacks",
@@ -120,14 +130,18 @@
       "title": "Better Chat",
       "version": "5.2.15",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "BetterChatMute",
       "title": "Better Chat Mute",
       "version": "1.2.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "BetterLoot",
@@ -144,7 +158,7 @@
       "title": "Better No Workbench",
       "version": "2.0.1",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Players with BetterNoWorkbench.on get workbench Tier 3 crafting (or Tier 1–2 per config) without standing at a bench—server QoL.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/better-no-workbench"
@@ -154,7 +168,7 @@
       "title": "BetterSentryTurrets",
       "version": "1.8.4",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Deployable sentry that can act as a normal Auto Turret or a SAM site depending on config. Permission sentryturrets.admin for the chat command.",
       "commands": [
         "/sentry"
@@ -208,21 +222,25 @@
       "title": "Chaos Commands",
       "version": "1.0.60",
       "hidden": true,
-      "premium": false
+      "premium": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ChaosExtensionDownloader",
       "title": "ChaosExtensionDownloader",
       "version": "1.0.50",
       "hidden": true,
-      "premium": false
+      "premium": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ChaosNPC",
       "title": "ChaosNPC",
       "version": "3.0.39",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Extension/API for custom AI NPCs used by other k1lly0u plugins—not a player feature by itself. Admins: extension chat /chaosnpc.wipenpcs; console chaosnpc.version, chaosnpc.update, chaosnpc.wipenpcs.",
       "commands": [],
       "documentationUrl": "https://chaoscode.io/resources/chaosnpc.216/"
@@ -232,13 +250,15 @@
       "title": "ChaosNPC Commands",
       "version": "3.0.39",
       "hidden": true,
-      "premium": false
+      "premium": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ChatClear",
       "title": "Chat Clear",
       "version": "2.0.0",
-      "hidden": true,
+      "hidden": false,
       "premium": false,
       "description": "Clears in-game chat for everyone or selected players (admin/moderation tool).",
       "commands": [],
@@ -291,7 +311,9 @@
       "title": "RustEdit Custom Topology Layers",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DeathNotes",
@@ -308,42 +330,55 @@
       "title": "RustEdit Deployable Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DeskKeycardSpawner",
       "title": "RustEdit Desk Keycard Spawner",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DieselCollectableSpawner",
       "title": "RustEdit Diesel Collectable Spawner",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DiscordExtension",
       "title": "Discord Extension",
       "version": "3.1.7",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DoorControl",
       "title": "Door Control",
       "version": "0.0.1",
       "hidden": false,
-      "premium": false
+      "premium": true,
+      "description": "A plugin that allows user, with granted permissions, to control the doors on their base via chat commands.",
+      "commands": [
+        "/doorsopen"
+        "/doorsclose"
+      ]
     },
     {
       "name": "DynamicCupShare",
       "title": "DynamicCupShare",
       "version": "3.1.21",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Share TC auth, turrets, and code-lock access dynamically with clan, team, or friends—UI via /share. Requires Chaos extension. Admins: /shareplayer <steamid>, /dcsadmin.",
       "commands": [
         "/share",
@@ -356,14 +391,18 @@
       "title": "Entity Owner",
       "version": "3.4.3",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ExcavatorRotationFix",
       "title": "RustEdit Excavator Rotation Correction",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Friends",
@@ -392,21 +431,25 @@
       "title": "Helicopter Instant Takeoff",
       "version": "0.1.0",
       "hidden": false,
-      "premium": false
+      "premium": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ImageLibrary",
       "title": "Image Library",
       "version": "2.0.64",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "InstantBarrel",
       "title": "Instant Barrel",
       "version": "1.3.2",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Optional 1 HP barrels/signs and loot straight to inventory when destroyed. Permission InstantBarrel.on. Works with tools and optionally weapons (range in config).",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/instant-barrel"
@@ -426,14 +469,18 @@
       "title": "Inventory Viewer",
       "version": "4.1.2",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "IOCore",
       "title": "RustEdit IO Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ItemRetriever",
@@ -450,7 +497,9 @@
       "title": "RustEdit JunkPile Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Kits",
@@ -470,7 +519,7 @@
       "title": "LockOnRockets",
       "version": "0.3.23",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Smoke rockets become lock-on missiles (vehicles, heli, players, etc. per config). Optional /craft.lockon with lockonrockets.craft. Pair with loot that adds smoke rockets.",
       "commands": [
         "/craft.lockon"
@@ -482,42 +531,57 @@
       "title": "RustEdit Loot Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "MagicStack",
       "title": "Magic Stack",
       "version": "0.0.1",
       "hidden": false,
-      "premium": false
+      "premium": true,
+      "description": "A plugin that allows players, with granted permissions, to stack deployables in their base, with the use of a chat command.",
+      "commands": [
+        "/mstack on",
+        "/mstack off"
+      ]
     },
     {
       "name": "MapMarkerApi",
       "title": "Map Marker Api",
       "version": "0.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "MonumentFinder",
       "title": "Monument Finder",
       "version": "3.1.5",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "NoGiveNotices",
       "title": "No Give Notices",
       "version": "0.3.0",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "NPCCore",
       "title": "RustEdit NPC Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "NTeleportation",
@@ -538,21 +602,25 @@
       "title": "RustEdit Ocean Path",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PayNow",
       "title": "PayNow",
       "version": "0.0.18",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PlaneCrash",
       "title": "PlaneCrash",
       "version": "0.3.12",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Callable cargo plane crash event: shoot down for loot, auto-timer, NPCs at crash site. Requires ChaosNPC. Commands: /callcrash, /callcrash help, coords or player name variants.",
       "commands": [
         "/callcrash",
@@ -565,14 +633,18 @@
       "title": "PlayerAdministration",
       "version": "1.6.9",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PlayerDLCAPI",
       "title": "Player DLC API",
       "version": "1.6.2",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PlayerList",
@@ -589,14 +661,18 @@
       "title": "Chaos Plugin Interface",
       "version": "1.0.60",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PopulateShopKeepers",
       "title": "RustEdit Shop Keepers",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PowerlessTurrets",
@@ -623,7 +699,7 @@
       "title": "Random Resource Node",
       "version": "1.3.9",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Spawns one infinite ore vein at a random surface location inside a configured circle—timed event or always-on—with optional spawn announcements, map markers, discovery flare, and extra HQM while mining the active metal vein. No default player chat commands; staff use /rrn (permission randomresourcenode.admin).",
       "commands": [
         "/rrn",
@@ -661,28 +737,36 @@
       "title": "RustEdit Resource Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "RustAppLite",
       "title": "RustApp Lite",
       "version": "1.1.0",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "RustCore",
       "title": "Rust",
       "version": "2.0.7178",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "RustEditCore",
       "title": "RustEdit Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "SignArtist",
@@ -699,7 +783,7 @@
       "title": "Simple Splitter",
       "version": "2.6.0",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "High-performance furnace/oven splitter: mixed ore splitting, smelt speed tweaks, charcoal tuning. Permission simplesplitter.use.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/simple-splitter"
@@ -709,14 +793,16 @@
       "title": "Skillz",
       "version": "2.0.0",
       "hidden": false,
-      "premium": false
+      "premium": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Skinner",
       "title": "Skinner",
       "version": "3.1.1",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Skin items via skinbox UI—/skin, /sc, /si, /skinauto, team skins, imports, etc. (many commands; permissions gate each).",
       "commands": [
         "/skin",
@@ -741,7 +827,9 @@
       "title": "RustEdit Spawn Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "SpawnHeli",
@@ -758,7 +846,7 @@
       "title": "Stack Modifier",
       "version": "2.9.8",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Custom stack sizes and stacking behaviour (Harmony); includes optional GUI editor. Player-visible stacks; /stackmodifier is admin editor when enabled in config.",
       "commands": [],
       "documentationUrl": "https://codefling.com/plugins/stack-modifier"
@@ -800,14 +888,18 @@
       "title": "Unity",
       "version": "2.0.3777",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "UpdateChecker",
       "title": "UpdateChecker",
       "version": "4.3.2",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "UpgradeWorkbenches",
@@ -824,42 +916,52 @@
       "title": "Vanish",
       "version": "2.1.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "VehicleCore",
       "title": "RustEdit Vehicle Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "VendingCore",
       "title": "RustEdit Vending Core",
       "version": "1.0.1",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "VipInspector",
       "title": "VipInspector",
       "version": "0.2.0",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "WarpSystem",
       "title": "Warp System",
       "version": "1.9.15",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "WarriorCoins",
       "title": "Warrior Coins",
       "version": "0.1.0",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Server economy (WC): timed passive earnings by permission tier, optional daily login bonus, player bounties on kills, /wc pay transfers, in-game /shop with item or command delivery and cooldowns, optional balance HUD, and /wcadmin shop editor for staff (warriorcoins.admin).",
       "commands": [
         "/wc",
@@ -879,7 +981,7 @@
       "title": "Weapon Modifier",
       "version": "1.0.3",
       "hidden": false,
-      "premium": false,
+      "premium": true,
       "description": "Staff-facing weapon tuning: magazine size, infinite ammo/condition, drop on death, craft preload/skin/condition. Uses /modify and /switchperm with permission (see Codefling docs).",
       "commands": [
         "/modify",
@@ -890,16 +992,20 @@
     {
       "name": "WebsiteHighlightsExport",
       "title": "WebsiteHighlightsExport",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Welcomer",
       "title": "Welcomer",
       "version": "2.1.0",
-      "hidden": false,
-      "premium": false
+      "hidden": true,
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "WheresMyCorpse",
@@ -918,14 +1024,18 @@
       "title": "Wipe Data Cleaner",
       "version": "1.4.3",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ZoneManager",
       "title": "Zone Manager",
       "version": "3.1.10",
       "hidden": true,
-      "premium": false
+      "premium": false,
+      "description": "",
+      "commands": []
     }
   ],
   "websiteHighlightLabels": [

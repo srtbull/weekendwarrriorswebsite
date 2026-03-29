@@ -7,9 +7,11 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sync-highlights.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "sync:highlights": "node scripts/sync-highlights.mjs",
     "enrich:plugins": "node scripts/enrich-plugin-docs.mjs",
     "enrich:plugins:umod": "node scripts/enrich-plugin-docs.mjs --try-umod"
   },

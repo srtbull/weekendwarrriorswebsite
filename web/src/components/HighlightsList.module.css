@@ -11,25 +11,19 @@
   font-weight: inherit;
   color: inherit;
   cursor: pointer;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(255, 178, 74, 0.55);
+  text-decoration: none;
 }
 
 .pluginTrigger:hover {
   color: #ffb24a;
-  text-decoration-color: #ffb24a;
 }
 
 .pluginTriggerPremium {
   color: #7aab1f;
-  text-decoration-color: rgba(122, 171, 31, 0.55);
 }
 
 .pluginTriggerPremium:hover {
   color: #93c428;
-  text-decoration-color: #93c428;
 }
 
 .suffix {
