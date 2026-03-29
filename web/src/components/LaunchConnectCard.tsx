@@ -58,9 +58,9 @@ export function LaunchConnectCard() {
             </button>
           </div>
           <p className={styles.hint}>
-            If the button doesn’t open Rust, use F1 →{" "}
-            <code className={styles.inlineCode}>client.connect {SERVER_ADDRESS}</code>
-            .
+            Direct connect opens Steam → Rust on PC. Use F1 console{" "}
+            <code className={styles.inlineCode}>client.connect {SERVER_ADDRESS}</code>{" "}
+            if the link doesn’t fire.
           </p>
         </div>
       </div>
