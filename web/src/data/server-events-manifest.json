@@ -1,22 +1,22 @@
 {
   "events": [
     {
-      "id": "planecrash",
-      "title": "Plane crash",
-      "description": "Replace this entry with your YouTube id or your own MP4 URL.",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
-    },
-    {
       "id": "advancedmlrs",
       "title": "Advanced MLRS",
-      "description": "Upload unlisted to YouTube and set youtubeVideoId, or use an https MP4 link.",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "description": "Designator strike—rockets on target with MLRS audio.",
+      "youtubeVideoId": "cqMYPA_4Qv8"
     },
     {
-      "id": "randomresourcenode",
-      "title": "Random resource node",
-      "description": "Edit web/src/data/server-events-manifest.json — do not commit huge MP4s to git.",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "id": "planecrash",
+      "title": "Plane crash",
+      "description": "Air drop chaos on the island—see it live on the server.",
+      "youtubeVideoId": "RRZvcg_1zw8"
+    },
+    {
+      "id": "randomresourcespawn",
+      "title": "Random resource spawn",
+      "description": "Infinite vein event—hunt the marker and mine it out.",
+      "youtubeVideoId": "zqkq9UnndUY"
     }
   ]
 }
