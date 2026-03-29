@@ -757,7 +757,7 @@
       "name": "WarpSystem",
       "title": "Warp System",
       "version": "1.9.15",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "WarriorCoins",
@@ -921,7 +921,6 @@
     "RustEdit Vehicle Core",
     "RustEdit Vending Core",
     "VipInspector",
-    "Warp System",
     "Warrior Coins",
     "Weapon Modifier",
     "WebsiteHighlightsExport",
