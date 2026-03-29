@@ -49,14 +49,6 @@ export function ServerEvents({ events }: Props) {
         <p className={styles.sub}>
           Short clips from the battlefield—tap to watch.
         </p>
-        <p className={styles.hostingNote}>
-          Use YouTube (unlisted works): set{" "}
-          <code className={styles.codeInline}>youtubeVideoId</code> in{" "}
-          <code className={styles.codeInline}>src/data/server-events-manifest.json</code>
-          . Or host an MP4 elsewhere and set <code className={styles.codeInline}>videoUrl</code>{" "}
-          to a full <code className={styles.codeInline}>https://</code> link. Large MP4s are not
-          committed here (GitHub blocks them).
-        </p>
         <ul className={styles.grid}>
           {events.map((ev) => {
             const thumb = thumbForEvent(ev);
