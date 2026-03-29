@@ -2,35 +2,57 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { HighlightPlugin } from "@/lib/website-highlights";
-import { HIGHLIGHTS_LIST_SUFFIX } from "@/lib/highlight-suffix";
+import {
+  HIGHLIGHTS_SUFFIX_AFTER_DISCORD,
+  HIGHLIGHTS_SUFFIX_BEFORE_DISCORD,
+} from "@/lib/highlight-suffix";
+import { DISCORD_INVITE_URL } from "@/lib/site-urls";
 import styles from "./HighlightsList.module.css";
 
 type Props =
-  | { mode: "fallback"; text: string }
+  | { mode: "fallback"; lead: string }
   | { mode: "plugins"; plugins: HighlightPlugin[] };
+
+function HighlightsDiscordSuffix() {
+  return (
+    <>
+      {HIGHLIGHTS_SUFFIX_BEFORE_DISCORD}
+      <a
+        className={styles.discordSuffixLink}
+        href={DISCORD_INVITE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Discord
+      </a>
+      {HIGHLIGHTS_SUFFIX_AFTER_DISCORD}
+    </>
+  );
+}
 
 export function HighlightsList(props: Props) {
   if (props.mode === "fallback") {
-    return <span>{props.text}</span>;
+    return (
+      <span>
+        {props.lead}
+        <HighlightsDiscordSuffix />
+      </span>
+    );
   }
 
   const { plugins } = props;
   if (plugins.length === 0) {
-    return <span>{HIGHLIGHTS_LIST_SUFFIX.trim()}</span>;
+    return (
+      <span>
+        <HighlightsDiscordSuffix />
+      </span>
+    );
   }
 
-  return (
-    <HighlightsInteractive plugins={plugins} suffix={HIGHLIGHTS_LIST_SUFFIX} />
-  );
+  return <HighlightsInteractive plugins={plugins} />;
 }
 
-function HighlightsInteractive({
-  plugins,
-  suffix,
-}: {
-  plugins: HighlightPlugin[];
-  suffix: string;
-}) {
+function HighlightsInteractive({ plugins }: { plugins: HighlightPlugin[] }) {
   const [open, setOpen] = useState<HighlightPlugin | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
@@ -70,7 +92,9 @@ function HighlightsInteractive({
             </button>
           </span>
         ))}
-        <span className={styles.suffix}>{suffix}</span>
+        <span className={styles.suffix}>
+          <HighlightsDiscordSuffix />
+        </span>
       </span>
 
       {open ? (

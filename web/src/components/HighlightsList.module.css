@@ -32,6 +32,19 @@
   white-space: normal;
 }
 
+/* Same blurple as .discord button background (page.module.css) */
+.discordSuffixLink {
+  color: rgb(88, 101, 242);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.discordSuffixLink:hover {
+  filter: brightness(1.08);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .backdrop {
   position: fixed;
   inset: 0;

@@ -1,6 +1,10 @@
 import { readFile } from "fs/promises";
 import path from "path";
-import { HIGHLIGHTS_LIST_SUFFIX } from "./highlight-suffix";
+import {
+  HIGHLIGHTS_LIST_SUFFIX,
+  HIGHLIGHTS_SUFFIX_AFTER_DISCORD,
+  HIGHLIGHTS_SUFFIX_BEFORE_DISCORD,
+} from "./highlight-suffix";
 
 export type InstalledPluginRow = {
   name: string;
@@ -34,8 +38,14 @@ export type HighlightPlugin = {
   premium?: boolean;
 };
 
+const FALLBACK_HIGHLIGHTS_LEAD =
+  "Kits · Clans · Backpacks · Better Loot · Skills · Warps & TP · Warrior Coins · Plane Crash & MLRS events · Trade · Skins & stacks";
+
 const FALLBACK_HIGHLIGHTS =
-  "Kits · Clans · Backpacks · Better Loot · Skills · Warps & TP · Warrior Coins · Plane Crash & MLRS events · Trade · Skins & stacks — full plugin list in Discord.";
+  FALLBACK_HIGHLIGHTS_LEAD +
+  HIGHLIGHTS_SUFFIX_BEFORE_DISCORD +
+  "Discord" +
+  HIGHLIGHTS_SUFFIX_AFTER_DISCORD;
 
 function normalizeCommands(raw: InstalledPluginRow["commands"]): string[] | undefined {
   if (raw == null) return undefined;
@@ -92,10 +102,10 @@ function pluginsFromInstalled(data: WebsiteHighlightsFile): HighlightPlugin[] {
     .filter((p) => p.title);
 }
 
-/** For the home page: structured plugins for click targets, or a single fallback string. */
+/** For the home page: structured plugins for click targets, or fallback lead text (Discord suffix added in UI). */
 export async function getHighlightData(): Promise<
   | { mode: "plugins"; plugins: HighlightPlugin[] }
-  | { mode: "fallback"; text: string }
+  | { mode: "fallback"; lead: string }
 > {
   try {
     const filePath = path.join(process.cwd(), "public", "website-highlights.json");
@@ -124,11 +134,11 @@ export async function getHighlightData(): Promise<
   } catch {
     /* missing or invalid */
   }
-  return { mode: "fallback", text: FALLBACK_HIGHLIGHTS };
+  return { mode: "fallback", lead: FALLBACK_HIGHLIGHTS_LEAD };
 }
 
 export async function getHighlightsBody(): Promise<string> {
   const data = await getHighlightData();
-  if (data.mode === "fallback") return data.text;
+  if (data.mode === "fallback") return FALLBACK_HIGHLIGHTS;
   return data.plugins.map((p) => p.title).join(" · ") + HIGHLIGHTS_LIST_SUFFIX;
 }

@@ -1,8 +1,7 @@
 import { HighlightsList } from "@/components/HighlightsList";
 import { getHighlightData } from "@/lib/website-highlights";
+import { DISCORD_INVITE_URL } from "@/lib/site-urls";
 import styles from "./page.module.css";
-
-const DISCORD_URL = "https://discord.gg/CAjPNVp7Rh";
 
 export default async function Home() {
   const highlightData = await getHighlightData();
@@ -41,7 +40,7 @@ export default async function Home() {
           <p className={styles.highlights}>
             <strong className={styles.highlightsLabel}>Highlights:</strong>{" "}
             {highlightData.mode === "fallback" ? (
-              <HighlightsList mode="fallback" text={highlightData.text} />
+              <HighlightsList mode="fallback" lead={highlightData.lead} />
             ) : (
               <HighlightsList mode="plugins" plugins={highlightData.plugins} />
             )}
@@ -51,7 +50,7 @@ export default async function Home() {
         <div className={styles.bottom}>
           <a
             className={styles.discord}
-            href={DISCORD_URL}
+            href={DISCORD_INVITE_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
