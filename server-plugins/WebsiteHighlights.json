@@ -1,29 +1,37 @@
 {
-  "generatedAtUtc": "2026-03-27T05:46:03.140184Z",
+  "generatedAtUtc": "2026-03-27T06:09:20.531064Z",
   "installedPlugins": [
     {
       "name": "AdminMenu",
       "title": "AdminMenu",
       "version": "2.1.11",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AdminRadar",
       "title": "Admin Radar",
       "version": "5.4.2",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AdvancedMLRS",
       "title": "AdvancedMLRS",
       "version": "4.5.0",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AdvancedRefinery",
       "title": "AdvancedRefinery",
       "version": "6.0.4",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AdvertMessages",
@@ -56,7 +64,9 @@
       "name": "APCCore",
       "title": "RustEdit APC Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "AutoAdd",
@@ -82,7 +92,9 @@
       "name": "AutoUpdater",
       "title": "RustEdit Automatic Updater",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Backpacks",
@@ -102,13 +114,17 @@
       "name": "BetterChat",
       "title": "Better Chat",
       "version": "5.2.15",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "BetterChatMute",
       "title": "Better Chat Mute",
       "version": "1.2.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "BetterLoot",
@@ -181,13 +197,17 @@
       "name": "ChaosExtensionCommands",
       "title": "Chaos Commands",
       "version": "1.0.60",
-      "hidden": true
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ChaosExtensionDownloader",
       "title": "ChaosExtensionDownloader",
       "version": "1.0.50",
-      "hidden": true
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ChaosNPC",
@@ -202,13 +222,15 @@
       "name": "ChaosNPCExtensionCommands",
       "title": "ChaosNPC Commands",
       "version": "3.0.39",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ChatClear",
       "title": "Chat Clear",
       "version": "2.0.0",
-      "hidden": true,
+      "hidden": false,
       "description": "Clears in-game chat for everyone or selected players (admin/moderation tool).",
       "commands": [],
       "documentationUrl": "https://umod.org/plugins/chat-clear"
@@ -255,7 +277,9 @@
       "name": "CustomTopologyLayers",
       "title": "RustEdit Custom Topology Layers",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DeathNotes",
@@ -270,31 +294,41 @@
       "name": "DeployableCore",
       "title": "RustEdit Deployable Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DeskKeycardSpawner",
       "title": "RustEdit Desk Keycard Spawner",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DieselCollectableSpawner",
       "title": "RustEdit Diesel Collectable Spawner",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DiscordExtension",
       "title": "Discord Extension",
       "version": "3.1.7",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DoorControl",
       "title": "Door Control",
       "version": "0.0.1",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "DynamicCupShare",
@@ -312,13 +346,17 @@
       "name": "EntityOwner",
       "title": "Entity Owner",
       "version": "3.4.3",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ExcavatorRotationFix",
       "title": "RustEdit Excavator Rotation Correction",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Friends",
@@ -344,13 +382,17 @@
       "name": "HelicopterInstantTakeoff",
       "title": "Helicopter Instant Takeoff",
       "version": "0.1.0",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ImageLibrary",
       "title": "Image Library",
       "version": "2.0.64",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "InstantBarrel",
@@ -374,13 +416,17 @@
       "name": "InventoryViewer",
       "title": "Inventory Viewer",
       "version": "4.1.2",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "IOCore",
       "title": "RustEdit IO Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ItemRetriever",
@@ -395,7 +441,9 @@
       "name": "JunkPileCore",
       "title": "RustEdit JunkPile Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Kits",
@@ -424,37 +472,49 @@
       "name": "LootCore",
       "title": "RustEdit Loot Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "MagicStack",
       "title": "Magic Stack",
       "version": "0.0.1",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "MapMarkerApi",
       "title": "Map Marker Api",
       "version": "0.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "MonumentFinder",
       "title": "Monument Finder",
       "version": "3.1.5",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "NoGiveNotices",
       "title": "No Give Notices",
       "version": "0.3.0",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "NPCCore",
       "title": "RustEdit NPC Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "NTeleportation",
@@ -473,13 +533,17 @@
       "name": "OceanPath",
       "title": "RustEdit Ocean Path",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PayNow",
       "title": "PayNow",
       "version": "0.0.18",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PlaneCrash",
@@ -497,13 +561,17 @@
       "name": "PlayerAdministration",
       "title": "PlayerAdministration",
       "version": "1.6.9",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PlayerDLCAPI",
       "title": "Player DLC API",
       "version": "1.6.2",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PlayerList",
@@ -518,13 +586,17 @@
       "name": "PluginInterface",
       "title": "Chaos Plugin Interface",
       "version": "1.0.60",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PopulateShopKeepers",
       "title": "RustEdit Shop Keepers",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "PowerlessTurrets",
@@ -548,7 +620,9 @@
       "name": "RandomResourceNode",
       "title": "Random Resource Node",
       "version": "1.3.9",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Recycle",
@@ -574,25 +648,33 @@
       "name": "ResourceCore",
       "title": "RustEdit Resource Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "RustAppLite",
       "title": "RustApp Lite",
       "version": "1.1.0",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "RustCore",
       "title": "Rust",
       "version": "2.0.7178",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "RustEditCore",
       "title": "RustEdit Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "SignArtist",
@@ -616,7 +698,9 @@
       "name": "Skillz",
       "title": "Skillz",
       "version": "2.0.0",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Skinner",
@@ -645,7 +729,9 @@
       "name": "SpawnCore",
       "title": "RustEdit Spawn Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "SpawnHeli",
@@ -698,13 +784,17 @@
       "name": "UnityCore",
       "title": "Unity",
       "version": "2.0.3777",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "UpdateChecker",
       "title": "UpdateChecker",
       "version": "4.3.2",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "UpgradeWorkbenches",
@@ -719,37 +809,49 @@
       "name": "Vanish",
       "title": "Vanish",
       "version": "2.1.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "VehicleCore",
       "title": "RustEdit Vehicle Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "VendingCore",
       "title": "RustEdit Vending Core",
       "version": "1.0.1",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "VipInspector",
       "title": "VipInspector",
       "version": "0.2.0",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "WarpSystem",
       "title": "Warp System",
       "version": "1.9.15",
-      "hidden": false
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "WarriorCoins",
       "title": "Warrior Coins",
       "version": "0.1.0",
-      "hidden": false
+      "hidden": false,
+      "description": "",
+      "commands": []
     },
     {
       "name": "WeaponModifier",
@@ -766,14 +868,18 @@
     {
       "name": "WebsiteHighlightsExport",
       "title": "WebsiteHighlightsExport",
-      "version": "1.1.0",
-      "hidden": true
+      "version": "1.2.0",
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "Welcomer",
       "title": "Welcomer",
       "version": "2.1.0",
-      "hidden": false
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "WheresMyCorpse",
@@ -790,13 +896,17 @@
       "name": "WipeDataCleaner",
       "title": "Wipe Data Cleaner",
       "version": "1.4.3",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     },
     {
       "name": "ZoneManager",
       "title": "Zone Manager",
       "version": "3.1.10",
-      "hidden": true
+      "hidden": true,
+      "description": "",
+      "commands": []
     }
   ],
   "websiteHighlightLabels": [
