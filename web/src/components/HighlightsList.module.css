@@ -9,7 +9,8 @@
   margin: 0;
   font: inherit;
   font-weight: inherit;
-  color: inherit;
+  /* Explicit base so .highlights paragraph color can’t beat premium via cascade order */
+  color: #e8e4de;
   cursor: pointer;
   text-decoration: none;
 }
@@ -18,11 +19,12 @@
   color: #ffb24a;
 }
 
-.pluginTriggerPremium {
+/* Double class: wins over single .pluginTrigger regardless of generated CSS order */
+.pluginTrigger.pluginTriggerPremium {
   color: #7aab1f;
 }
 
-.pluginTriggerPremium:hover {
+.pluginTrigger.pluginTriggerPremium:hover {
   color: #93c428;
 }
 

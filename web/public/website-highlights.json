@@ -369,7 +369,7 @@
       "premium": true,
       "description": "A plugin that allows user, with granted permissions, to control the doors on their base via chat commands.",
       "commands": [
-        "/doorsopen"
+        "/doorsopen",
         "/doorsclose"
       ]
     },
