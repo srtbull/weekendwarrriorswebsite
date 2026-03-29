@@ -105,9 +105,44 @@ function HighlightsInteractive({
                 <span>{open.version}</span>
               </p>
             ) : null}
-            <p className={styles.modalPlaceholder}>
-              Test modal — plugin details will go here later.
-            </p>
+
+            {open.documentationUrl ? (
+              <p className={styles.modalMeta}>
+                <a
+                  className={styles.docLink}
+                  href={open.documentationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Full documentation →
+                </a>
+              </p>
+            ) : null}
+
+            {open.description ? (
+              <p className={styles.modalDescription}>{open.description}</p>
+            ) : null}
+
+            {open.commands?.length ? (
+              <div className={styles.commandsBlock}>
+                <h3 className={styles.commandsHeading}>Commands</h3>
+                <ul className={styles.commandsList}>
+                  {open.commands.map((line, idx) => (
+                    <li key={idx}>
+                      <code className={styles.commandLine}>{line}</code>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {!open.description &&
+            (!open.commands || open.commands.length === 0) ? (
+              <p className={styles.modalHint}>
+                No description or commands listed for this plugin yet.
+              </p>
+            ) : null}
           </div>
         </div>
       ) : null}

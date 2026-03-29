@@ -8,6 +8,12 @@ export type InstalledPluginRow = {
   version?: string;
   /** If true, omitted from Highlights line */
   hidden?: boolean;
+  /** Short modal blurb; usually edited in JSON, merged on server export */
+  description?: string;
+  /** Chat/console lines for the modal */
+  commands?: string[] | string;
+  /** Docs page (umod, GitHub, etc.); optional, merged on server export */
+  documentationUrl?: string;
 };
 
 export type WebsiteHighlightsFile = {
@@ -20,10 +26,29 @@ export type HighlightPlugin = {
   name: string;
   title: string;
   version?: string;
+  description?: string;
+  commands?: string[];
+  documentationUrl?: string;
 };
 
 const FALLBACK_HIGHLIGHTS =
   "Kits · Clans · Backpacks · Better Loot · Skills · Warps & TP · Warrior Coins · Plane Crash & MLRS events · Trade · Skins & stacks — full plugin list in Discord.";
+
+function normalizeCommands(raw: InstalledPluginRow["commands"]): string[] | undefined {
+  if (raw == null) return undefined;
+  if (Array.isArray(raw)) {
+    const lines = raw.filter((x): x is string => typeof x === "string").map((s) => s.trim()).filter(Boolean);
+    return lines.length ? lines : undefined;
+  }
+  if (typeof raw === "string") {
+    const lines = raw
+      .split(/\r?\n/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    return lines.length ? lines : undefined;
+  }
+  return undefined;
+}
 
 function pluginsFromInstalled(data: WebsiteHighlightsFile): HighlightPlugin[] {
   if (!Array.isArray(data.installedPlugins) || data.installedPlugins.length === 0) {
@@ -31,11 +56,20 @@ function pluginsFromInstalled(data: WebsiteHighlightsFile): HighlightPlugin[] {
   }
   return data.installedPlugins
     .filter((p) => p && p.hidden !== true)
-    .map((p) => ({
-      name: p.name,
-      title: (p.title && p.title.trim()) || p.name || "",
-      version: p.version,
-    }))
+    .map((p) => {
+      const desc = p.description?.trim();
+      const cmds = normalizeCommands(p.commands);
+      const docUrl = p.documentationUrl?.trim();
+      const row: HighlightPlugin = {
+        name: p.name,
+        title: (p.title && p.title.trim()) || p.name || "",
+        version: p.version,
+      };
+      if (desc) row.description = desc;
+      if (cmds?.length) row.commands = cmds;
+      if (docUrl) row.documentationUrl = docUrl;
+      return row;
+    })
     .filter((p) => p.title);
 }
 

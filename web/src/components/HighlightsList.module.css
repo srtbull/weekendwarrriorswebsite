@@ -110,6 +110,17 @@
   color: #c9c2b8;
 }
 
+.docLink {
+  color: #ffb24a;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.docLink:hover {
+  color: #ffc266;
+}
+
 .modalLabel {
   color: #ffb24a;
   font-weight: 600;
@@ -123,11 +134,54 @@
   background: rgba(0, 0, 0, 0.35);
 }
 
-.modalPlaceholder {
+.modalDescription {
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #e8e3db;
+}
+
+.commandsBlock {
+  margin: 1.1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.commandsHeading {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffb24a;
+}
+
+.commandsList {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #c9c2b8;
+}
+
+.commandsList li {
+  margin: 0.35rem 0;
+}
+
+.commandLine {
+  font-size: 0.9rem;
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f0ebe4;
+  word-break: break-word;
+}
+
+.modalHint {
   margin: 1.25rem 0 0;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   color: #9a9288;
 }
