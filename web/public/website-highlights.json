@@ -25,8 +25,9 @@
       "version": "4.5.0",
       "hidden": false,
       "premium": true,
-      "description": "",
-      "commands": []
+      "description": "Call an MLRS strike by throwing a special F1 designator (grenade.f1 + workshop skin 841650807)—no explosion; after ~2.5s rockets hit that spot with MLRS audio. Rocket count by permission (basic 6 → vip3 12; admin 50 + double damage). Add the skinned grenade via loot/kits.",
+      "commands": [],
+      "documentationUrl": "/plugin-docs/advanced-mlrs.html"
     },
     {
       "name": "AdvancedRefinery",
