@@ -50,12 +50,20 @@ function normalizeCommands(raw: InstalledPluginRow["commands"]): string[] | unde
   return undefined;
 }
 
+/** JSON / merge quirks sometimes ship non-boolean hidden; treat those as hidden too. */
+function rowIsHidden(p: InstalledPluginRow): boolean {
+  const h = p.hidden as unknown;
+  if (h === true || h === 1) return true;
+  if (typeof h === "string" && /^true$/i.test(h.trim())) return true;
+  return false;
+}
+
 function pluginsFromInstalled(data: WebsiteHighlightsFile): HighlightPlugin[] {
   if (!Array.isArray(data.installedPlugins) || data.installedPlugins.length === 0) {
     return [];
   }
   return data.installedPlugins
-    .filter((p) => p && p.hidden !== true)
+    .filter((p) => p && !rowIsHidden(p))
     .map((p) => {
       const desc = p.description?.trim();
       const cmds = normalizeCommands(p.commands);
@@ -83,8 +91,13 @@ export async function getHighlightData(): Promise<
     const raw = await readFile(filePath, "utf-8");
     const data = JSON.parse(raw) as WebsiteHighlightsFile;
 
+    const installed = data.installedPlugins;
+    const hasInstalledList = Array.isArray(installed) && installed.length > 0;
+
     const fromInstalled = pluginsFromInstalled(data);
-    if (fromInstalled.length > 0) {
+    if (hasInstalledList) {
+      // Never fall back to websiteHighlightLabels here: that array is not keyed by
+      // hidden and would show every title (e.g. after filtering to zero visible).
       return { mode: "plugins", plugins: fromInstalled };
     }
 
