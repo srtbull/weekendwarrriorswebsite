@@ -9,7 +9,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "enrich:plugins": "node scripts/enrich-plugin-docs.mjs",
+    "enrich:plugins:umod": "node scripts/enrich-plugin-docs.mjs --try-umod"
   },
   "dependencies": {
     "next": "15.5.14",
