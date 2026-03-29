@@ -85,6 +85,11 @@
 
 .body {
   margin-top: clamp(1.75rem, 4vh, 2.75rem);
+  width: 100%;
+  max-width: none;
+}
+
+.bodyNarrow {
   max-width: 52rem;
 }
 
@@ -128,10 +133,12 @@
   margin: clamp(1.5rem, 3.5vh, 2.35rem) 0 0;
   font-size: clamp(0.95rem, 2vw, 1.45rem);
   font-weight: 600;
-  line-height: 1.5;
-  max-width: 48rem;
+  line-height: 1.45;
   color: #e8e4de;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  /* Wider than body copy: ~half viewport on large screens, full width on small */
+  width: min(100%, max(52vw, 36rem));
+  max-width: min(120rem, 96vw);
 }
 
 .highlightsLabel {

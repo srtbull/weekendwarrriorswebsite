@@ -28,22 +28,24 @@ export default async function Home() {
         </div>
 
         <section className={styles.body}>
-          <ul className={styles.tags} aria-label="Server features">
-            <li className={`${styles.tag} ${styles.tagAccent}`}>US HOSTED</li>
-            <li className={styles.tag}>10X</li>
-            <li className={styles.tag}>24/7 PVP</li>
-            <li className={`${styles.tag} ${styles.tagAccent}`}>
-              CUSTOM AND PREMIUM PLUGINS
-            </li>
-          </ul>
+          <div className={styles.bodyNarrow}>
+            <ul className={styles.tags} aria-label="Server features">
+              <li className={`${styles.tag} ${styles.tagAccent}`}>US HOSTED</li>
+              <li className={styles.tag}>10X</li>
+              <li className={styles.tag}>24/7 PVP</li>
+              <li className={`${styles.tag} ${styles.tagAccent}`}>
+                CUSTOM AND PREMIUM PLUGINS
+              </li>
+            </ul>
 
-          <p className={styles.pitch}>
-            High-octane Rust with stacked loot, clans, kits, warps, skills,
-            events, and QoL—built for players who want the fight, not the
-            grind.
-          </p>
+            <p className={styles.pitch}>
+              High-octane Rust with stacked loot, clans, kits, warps, skills,
+              events, and QoL—built for players who want the fight, not the
+              grind.
+            </p>
 
-          <ServerEvents events={serverEvents} />
+            <ServerEvents events={serverEvents} />
+          </div>
 
           <p className={styles.highlights}>
             <strong className={styles.highlightsLabel}>Highlights:</strong>{" "}
