@@ -1,0 +1,260 @@
+.section {
+  margin-top: clamp(1.25rem, 3vh, 2rem);
+  max-width: 52rem;
+}
+
+.heading {
+  margin: 0 0 0.35rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  letter-spacing: 0.12em;
+  color: #ffb24a;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+
+.sub {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #c9c2b8;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hostingNote {
+  margin: 0 0 1.1rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(201, 194, 184, 0.72);
+  max-width: 40rem;
+}
+
+.codeInline {
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.92em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e0ddd6;
+  word-break: break-all;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+.cardWrap {
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  border-radius: 10px;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.card:focus-visible {
+  outline: 2px solid #ffb24a;
+  outline-offset: 3px;
+}
+
+.thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 178, 74, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  background: #0d0a08;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbFallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 107, 44, 0.25) 0%,
+    rgba(20, 16, 12, 0.95) 45%,
+    rgba(10, 8, 6, 1) 100%
+  );
+}
+
+.play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.play::after {
+  content: "";
+  position: absolute;
+  left: 54%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 0.55rem 0 0.55rem 0.9rem;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.92);
+}
+
+.cardTitle {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: clamp(0.88rem, 2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #e8e4de;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+  line-height: 1.25;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(5, 3, 2, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: min(52rem, 100vw - 2rem);
+  padding: 1.35rem 1.25rem 1.25rem;
+  border-radius: 12px;
+  background: linear-gradient(165deg, #1a1512 0%, #0d0a08 100%);
+  border: 1px solid rgba(255, 178, 74, 0.25);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  color: #f4f1ec;
+  animation: popIn 0.22s ease;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f4f1ec;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  z-index: 2;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 107, 44, 0.35);
+}
+
+.modalTitle {
+  margin: 0 2.5rem 0.5rem 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.modalDesc {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #c9c2b8;
+}
+
+.videoShell {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(70vh, 720px);
+  vertical-align: middle;
+}
+
+.embed {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  max-height: min(70vh, 720px);
+  border: 0;
+}

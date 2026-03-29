@@ -1,10 +1,16 @@
 import { HighlightsList } from "@/components/HighlightsList";
+import { LaunchConnectCard } from "@/components/LaunchConnectCard";
+import { ServerEvents } from "@/components/ServerEvents";
 import { getHighlightData } from "@/lib/website-highlights";
+import { getServerEvents } from "@/lib/server-events";
 import { DISCORD_INVITE_URL } from "@/lib/site-urls";
 import styles from "./page.module.css";
 
 export default async function Home() {
-  const highlightData = await getHighlightData();
+  const [highlightData, serverEvents] = await Promise.all([
+    getHighlightData(),
+    getServerEvents(),
+  ]);
 
   return (
     <div className={styles.shell}>
@@ -18,7 +24,7 @@ export default async function Home() {
               <span className={styles.titleSub}>BATTLEFIELD</span>
             </h1>
           </div>
-          <div className={styles.comingSoon}>COMING SOON</div>
+          <LaunchConnectCard />
         </div>
 
         <section className={styles.body}>
@@ -36,6 +42,8 @@ export default async function Home() {
             events, and QoL—built for players who want the fight, not the
             grind.
           </p>
+
+          <ServerEvents events={serverEvents} />
 
           <p className={styles.highlights}>
             <strong className={styles.highlightsLabel}>Highlights:</strong>{" "}

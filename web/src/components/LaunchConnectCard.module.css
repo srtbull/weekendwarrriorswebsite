@@ -1,0 +1,219 @@
+.card {
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: relative;
+  max-width: min(100%, 22rem);
+  border-radius: 4px;
+  background: linear-gradient(
+    145deg,
+    rgba(12, 10, 8, 0.92) 0%,
+    rgba(22, 18, 14, 0.96) 100%
+  );
+  border: 1px solid rgba(255, 178, 74, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  display: flex;
+  overflow: hidden;
+}
+
+.rail {
+  width: 5px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #ff8c4a 0%, #c73e1d 55%, #8b250f 100%);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.inner {
+  padding: 0.85rem 1rem 1rem 0.95rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 210, 160, 0.85);
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.65);
+  animation: pulseDot 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(0.92);
+  }
+}
+
+.dateCompact {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  line-height: 0.95;
+  letter-spacing: 0.14em;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55);
+}
+
+.dateFull {
+  margin: 0.2rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #c9c2b8;
+  letter-spacing: 0.03em;
+}
+
+.tagline {
+  margin: 0.45rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #ffb24a;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.connectBlock {
+  margin-top: 0.95rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.connectLabel {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.address {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.65rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 6px;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  font-weight: 600;
+  color: #e8f5e9;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 178, 74, 0.22);
+  word-break: break-all;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.connectBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem 0.48rem;
+  border-radius: 6px;
+  border: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3d7a2e 0%, #2d5a22 45%, #1e3d18 100%);
+  border: 2px solid rgba(144, 238, 144, 0.35);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.connectBtn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.connectBtn:focus-visible {
+  outline: 2px solid #ffb24a;
+  outline-offset: 3px;
+}
+
+.copyBtn {
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8e4de;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 178, 74, 0.45);
+}
+
+.copyBtn:focus-visible {
+  outline: 2px solid #ffb24a;
+  outline-offset: 2px;
+}
+
+.hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: rgba(201, 194, 184, 0.75);
+}
+
+.inlineCode {
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.68em;
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #c8e6c9;
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  .card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connectBtn,
+  .copyBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

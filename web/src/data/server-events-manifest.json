@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "id": "planecrash",
+      "title": "Plane crash",
+      "description": "Replace this entry with your YouTube id or your own MP4 URL.",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    {
+      "id": "advancedmlrs",
+      "title": "Advanced MLRS",
+      "description": "Upload unlisted to YouTube and set youtubeVideoId, or use an https MP4 link.",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    {
+      "id": "randomresourcenode",
+      "title": "Random resource node",
+      "description": "Edit web/src/data/server-events-manifest.json — do not commit huge MP4s to git.",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+    }
+  ]
+}

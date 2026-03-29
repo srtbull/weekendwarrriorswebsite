@@ -1,0 +1,3 @@
+# Keep large clips out of git (GitHub 100MB limit). Use YouTube ids in
+# src/data/server-events-manifest.json or host files outside the repo.
+*.mp4

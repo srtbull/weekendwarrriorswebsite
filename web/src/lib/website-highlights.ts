@@ -1,10 +1,10 @@
 import { readFile } from "fs/promises";
-import path from "path";
 import {
   HIGHLIGHTS_LIST_SUFFIX,
   HIGHLIGHTS_SUFFIX_AFTER_DISCORD,
   HIGHLIGHTS_SUFFIX_BEFORE_DISCORD,
 } from "./highlight-suffix";
+import { resolvePublicFile } from "./resolve-public-path";
 
 export type InstalledPluginRow = {
   name: string;
@@ -108,7 +108,8 @@ export async function getHighlightData(): Promise<
   | { mode: "fallback"; lead: string }
 > {
   try {
-    const filePath = path.join(process.cwd(), "public", "website-highlights.json");
+    const filePath = resolvePublicFile("website-highlights.json");
+    if (!filePath) throw new Error("website-highlights.json not found");
     const raw = await readFile(filePath, "utf-8");
     const data = JSON.parse(raw) as WebsiteHighlightsFile;
 

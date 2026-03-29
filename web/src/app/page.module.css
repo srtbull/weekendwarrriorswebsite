@@ -83,20 +83,6 @@
   color: #ffb24a;
 }
 
-.comingSoon {
-  flex-shrink: 0;
-  align-self: flex-start;
-  background: linear-gradient(135deg, #ff6b2c 0%, #c73e1d 100%);
-  color: #fff;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(1.35rem, 3.5vw, 2.5rem);
-  letter-spacing: 0.32em;
-  padding: 0.55rem 1.1rem 0.45rem;
-  border: 3px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-  text-align: center;
-}
-
 .body {
   margin-top: clamp(1.75rem, 4vh, 2.75rem);
   max-width: 52rem;
@@ -139,7 +125,7 @@
 }
 
 .highlights {
-  margin: 0;
+  margin: clamp(1.5rem, 3.5vh, 2.35rem) 0 0;
   font-size: clamp(0.95rem, 2vw, 1.45rem);
   font-weight: 600;
   line-height: 1.5;
